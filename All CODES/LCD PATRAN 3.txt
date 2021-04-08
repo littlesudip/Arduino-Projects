@@ -1,0 +1,36 @@
+//LCD PATRAN 3
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+byte bar1[8] = 
+{
+  B11111,
+  B11111,
+  B11111,
+  B11011,
+  B10001,
+  B11011,
+  B11011,
+  B11011
+};
+byte bar2[8] =
+{
+  B11011,
+  B11011,
+  B10001,
+  B11011,
+  B11111,
+  B11111,
+  B11111,
+  B11111
+};
+void setup()
+{
+  lcd.createChar(1,bar1);
+  lcd.createChar(2,bar2);
+  lcd.begin(20,4);
+}
+void loop(){  
+  lcd.write(1);
+  lcd.write(2);
+}

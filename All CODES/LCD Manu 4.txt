@@ -1,0 +1,73 @@
+//LCD Manu 4
+#include <LiquidCrystal.h>
+int d7 = 2, d6 = 3, d5 = 4, d4 = 5, en = 6, rs = 7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int page_counter = 1 ;
+int up = 9;
+int down = 10;
+boolean current_up = 0;
+boolean last_up = 0;
+boolean last_down =0;
+boolean current_down = 0;
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(up, INPUT);
+  pinMode(down, INPUT);
+}
+boolean Batton(boolean last, int pin)
+{
+  boolean current = digitalRead(pin);
+  if (last != current)
+  {
+    delay(5);
+    current = digitalRead(pin);
+  }
+  return current;
+}
+void loop() {
+
+  current_up = Batton(last_up, up);
+  current_down = Batton(last_down, down);
+  if (last_up == 0 && current_up == 1) {
+    lcd.clear();
+    if (page_counter < 3) {
+      page_counter = page_counter + 1;
+    }
+    else {
+      page_counter = 3;
+    }
+  }
+  last_up = current_up;
+  if (last_down == 0 && current_down == 1) {
+    if (page_counter > 1) {
+      page_counter = page_counter - 1;
+    }
+    else {
+      page_counter = 1;
+    }
+  }
+  last_down = current_down;
+  switch (page_counter) {
+    case 1: {
+        lcd.setCursor(5, 0);
+        lcd.print("This is");
+        lcd.setCursor(3, 1);
+        lcd.print(" Home Page");
+      }
+      break;
+    case 2: {
+        lcd.setCursor(5, 0);
+        lcd.print("This is");
+        lcd.setCursor(5, 1);
+        lcd.print("Page 2");
+      }
+      break;
+    case 3: {   //Design of page 3
+        lcd.setCursor(1, 0);
+        lcd.print("You are now on");
+        lcd.setCursor(4, 1);
+        lcd.print("Page 3");
+      }
+      break;
+  }
+}

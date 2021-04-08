@@ -1,0 +1,23 @@
+//PIN DUAL BLINK ARRY (18)(+,-)
+int i,a=0,v=100,n=18,p[]={2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+void setup() {
+  for (i=0;i<n;i++) {
+    pinMode(p[i],OUTPUT);
+  }
+}
+void loop() {
+  for (i= 0;i<n;i++) {
+    digitalWrite(p[i+a++],1);
+    digitalWrite(p[i+(a)],1);
+    delay(v);
+    digitalWrite(p[i+a--],0);
+    digitalWrite(p[i+a],0);
+  }
+  for (i=n-1;i>=0;i--) {
+    digitalWrite(p[i+a++],1);
+    digitalWrite(p[i+a],1);
+    delay(v);
+    digitalWrite(p[i+a--],0);
+    digitalWrite(p[i+a],0);
+  }
+}  

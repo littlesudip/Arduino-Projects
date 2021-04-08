@@ -1,0 +1,14 @@
+// Dim an LED using a PWM pin
+int p=10;
+void setup()
+{
+}
+void loop(){
+  int x=1;
+   for (int i=0;i>-1;i=i+x){
+   analogWrite(p,i);
+   if (i==255) 
+   x=-1;
+   delay(10);
+   } 
+}

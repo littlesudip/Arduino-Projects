@@ -1,0 +1,25 @@
+//LCD (all) SERIES BLINK BY(FOR)(+)(18)
+#include <LiquidCrystal.h>
+int d7 = 2, d6 = 3, d5 = 4, d4 = 5, en = 6, rs = 7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int p, f = 30, l = 49 , x = 500;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+  lcd.begin(20, 4);
+}
+void loop()
+{
+  for (int a = f; a <= l; a++) {
+    lcd.setCursor(6, 1);
+    lcd.print("LED ON=");
+    lcd.print(a - 29);
+    digitalWrite(a, 01);
+    delay(x);
+    digitalWrite(a, 00);
+
+  }
+  lcd.clear();
+}

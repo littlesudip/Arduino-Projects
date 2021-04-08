@@ -1,0 +1,18 @@
+//Maximum
+int p, f = 22, l = 41, a = 22, x = 100;
+int m1;
+void setup() {
+  for (p = f; p <= l; p++) {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  m1 = max(22, a--);
+  digitalWrite(m1, 01);
+  delay (x);
+  digitalWrite(m1, 00);
+  delay (x);
+  if (a <= 22) {
+    a = 41;
+  }
+}

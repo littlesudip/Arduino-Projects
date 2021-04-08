@@ -1,0 +1,35 @@
+//xxxxxxx
+int p, a, a1, a2,  f = 30, l = 49, x = 500;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  for (a = f; a <= l; a++) {
+    if (a % 3 == 0) {
+      digitalWrite(a1, 00);
+    }
+  } 
+  delay (x);
+  digitalWrite(a1, 00);
+  digitalWrite(a2, 00);
+  for (a1 = f; a1 <= l; a1++) {
+    if (a1 % 4 == 0) {
+      digitalWrite(a1, 01);
+    }
+  } 
+  delay (x);
+  digitalWrite(a1, 00);
+  digitalWrite(a, 00);
+  for (a2 = f; a2 <= l; a2++) {
+    if (a2 % 5 == 0) {
+      digitalWrite(a2, 01);
+    }
+  } 
+  delay (x);
+  digitalWrite(a, 00);
+  digitalWrite(a1, 00);
+}
+

@@ -1,0 +1,984 @@
+//LCD CUSTON FULL
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+byte D0[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D1[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D2[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D3[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D4[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D5[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D6[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D7[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D8[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D9[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D10[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D11[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D12[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D13[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D14[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D15[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D16[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D17[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D18[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D19[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D20[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D21[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D22[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D23[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D24[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D25[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D26[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D27[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D28[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D29[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D30[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D31[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D32[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D33[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D34[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D35[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D36[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D37[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D38[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D39[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D40[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D41[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D42[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D43[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D44[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D45[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D46[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D47[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D48[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D49[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D50[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D51[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D52[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D53[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D54[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D55[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D56[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D57[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D58[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D59[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D60[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D61[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D62[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D63[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D64[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D65[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D66[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D67[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D68[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D69[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D70[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D71[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D72[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D73[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D74[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D75[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D76[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D77[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D78[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D79[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+byte D80[8] = {
+  0b00001,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000,
+  0b00000
+};
+void setup() {
+  lcd.begin(20,4);
+  lcd.createChar(0,D0);
+  lcd.createChar(1,D1);
+  lcd.createChar(2,D2);
+  lcd.createChar(3,D3);
+  lcd.createChar(4,D4);
+  lcd.createChar(5,D5);
+  lcd.createChar(6,D6);
+  lcd.createChar(7,D7);
+  lcd.createChar(8,D8);
+  lcd.createChar(9,D9);
+  lcd.createChar(10,D10);
+  lcd.createChar(11,D11);
+  lcd.createChar(12,D12);
+  lcd.createChar(13,D13);
+  lcd.createChar(14,D14);
+  lcd.createChar(15,D15);
+  lcd.createChar(16,D16);
+  lcd.createChar(17,D17);
+  lcd.createChar(18,D18);
+  lcd.createChar(19,D19); 
+  lcd.createChar(20,D20);
+  lcd.createChar(21,D21);
+  lcd.createChar(22,D22);
+  lcd.createChar(23,D23);
+  lcd.createChar(24,D24);
+  lcd.createChar(25,D25);
+  lcd.createChar(26,D26);
+  lcd.createChar(27,D27);
+  lcd.createChar(28,D28);
+  lcd.createChar(29,D29);
+  lcd.createChar(30,D30);
+  lcd.createChar(31,D31);
+  lcd.createChar(32,D32);
+  lcd.createChar(33,D33);
+  lcd.createChar(34,D34);
+  lcd.createChar(35,D35);
+  lcd.createChar(36,D36);
+  lcd.createChar(37,D37);
+  lcd.createChar(38,D38);
+  lcd.createChar(39,D39); 
+  lcd.createChar(40,D40);
+  lcd.createChar(41,D41);
+  lcd.createChar(42,D42);
+  lcd.createChar(43,D43);
+  lcd.createChar(44,D44);
+  lcd.createChar(45,D45);
+  lcd.createChar(46,D46);
+  lcd.createChar(47,D47);
+  lcd.createChar(48,D48);
+  lcd.createChar(49,D49);
+  lcd.createChar(50,D50);
+  lcd.createChar(51,D51);
+  lcd.createChar(52,D52);
+  lcd.createChar(53,D53);
+  lcd.createChar(54,D54);
+  lcd.createChar(55,D55);
+  lcd.createChar(56,D56);
+  lcd.createChar(57,D57);
+  lcd.createChar(58,D58);
+  lcd.createChar(59,D59);     
+  lcd.createChar(60,D60);
+  lcd.createChar(61,D61);
+  lcd.createChar(62,D62);
+  lcd.createChar(63,D63);
+  lcd.createChar(64,D64);
+  lcd.createChar(65,D65);
+  lcd.createChar(66,D66);
+  lcd.createChar(67,D67);
+  lcd.createChar(68,D68);
+  lcd.createChar(69,D69);
+  lcd.createChar(70,D70);
+  lcd.createChar(71,D71);
+  lcd.createChar(72,D72);
+  lcd.createChar(73,D73);
+  lcd.createChar(74,D74);
+  lcd.createChar(75,D75);
+  lcd.createChar(76,D76);
+  lcd.createChar(77,D77);
+  lcd.createChar(78,D78);
+  lcd.createChar(79,D79);
+  lcd.createChar(80,D80);
+}
+void loop() {
+  lcd.setCursor(0,0);
+  lcd.write(byte(0));
+  lcd.write(byte(1));
+  lcd.write(byte(2));
+  lcd.write(byte(3));
+  lcd.write(byte(4));
+  lcd.write(byte(5));
+  lcd.write(byte(6));
+  lcd.write(byte(7));
+  lcd.write(byte(8));
+  lcd.write(byte(9));
+  lcd.write(byte(10));
+  lcd.write(byte(11));
+  lcd.write(byte(12));
+  lcd.write(byte(13));
+  lcd.write(byte(14));
+  lcd.write(byte(15));
+  lcd.write(byte(16));
+  lcd.write(byte(17));
+  lcd.write(byte(18));
+  lcd.write(byte(19));
+  lcd.setCursor(0,1);  
+  lcd.write(byte(20));
+  lcd.write(byte(21));
+  lcd.write(byte(22));
+  lcd.write(byte(23));
+  lcd.write(byte(24));
+  lcd.write(byte(25));
+  lcd.write(byte(26));
+  lcd.write(byte(27));
+  lcd.write(byte(28));
+  lcd.write(byte(29));
+  lcd.write(byte(30));
+  lcd.write(byte(31));
+  lcd.write(byte(32));
+  lcd.write(byte(33));
+  lcd.write(byte(34));
+  lcd.write(byte(35));
+  lcd.write(byte(36));
+  lcd.write(byte(37));
+  lcd.write(byte(38));
+  lcd.write(byte(39));           
+  lcd.setCursor(0,2); 
+  lcd.write(byte(40));
+  lcd.write(byte(41));
+  lcd.write(byte(42));
+  lcd.write(byte(43));
+  lcd.write(byte(44));
+  lcd.write(byte(45));
+  lcd.write(byte(46));
+  lcd.write(byte(47));
+  lcd.write(byte(48));
+  lcd.write(byte(49));
+  lcd.write(byte(50));
+  lcd.write(byte(51));
+  lcd.write(byte(52));
+  lcd.write(byte(53));
+  lcd.write(byte(54));
+  lcd.write(byte(55));
+  lcd.write(byte(56));
+  lcd.write(byte(57));
+  lcd.write(byte(58));
+  lcd.write(byte(59));           
+  lcd.setCursor(0,3); 
+  lcd.write(byte(60));
+  lcd.write(byte(61));
+  lcd.write(byte(62));
+  lcd.write(byte(63));
+  lcd.write(byte(64));
+  lcd.write(byte(65));
+  lcd.write(byte(66));
+  lcd.write(byte(67));
+  lcd.write(byte(68));
+  lcd.write(byte(69));
+  lcd.write(byte(70));
+  lcd.write(byte(71));
+  lcd.write(byte(72));
+  lcd.write(byte(73));
+  lcd.write(byte(74));
+  lcd.write(byte(75));
+  lcd.write(byte(76));
+  lcd.write(byte(77));
+  lcd.write(byte(78));
+  lcd.write(byte(80));               
+}

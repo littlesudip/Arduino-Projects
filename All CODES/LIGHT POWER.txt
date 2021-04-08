@@ -1,0 +1,17 @@
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);   
+int D,A=14; 
+void setup() {
+pinMode(A,INPUT); 
+lcd.begin(20,4);
+}
+void loop() {
+D=analogRead(A);
+lcd.clear();
+lcd.setCursor(2,1); 
+lcd.print("LIGHT POWER: ");
+lcd.setCursor(15,1); 
+lcd.print(D);
+delay(100);
+}

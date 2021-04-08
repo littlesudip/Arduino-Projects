@@ -1,0 +1,19 @@
+//SINGLE ON
+int p, f = 22, l = 41, n, k = 0, x = 100;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop()
+{
+  for (n = 0; n <= (l - f); n++) {
+    if (n == k) {
+      digitalWrite(f + n, 01);
+      continue;
+    }
+    else {
+      digitalWrite(f + n, 00);
+    }
+  }k++;

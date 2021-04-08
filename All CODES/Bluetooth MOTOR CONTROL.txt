@@ -1,0 +1,108 @@
+//Bluetooth MOTOR CONTROL
+int m=2,c=20, h = c-1;
+char D = 0;
+void setup() {
+    Serial.begin(9600);
+    pinMode(m, OUTPUT);
+}
+void loop() {
+  start:
+  vetocity();  
+if(h==0||h<4){digitalWrite(m, 00);goto start;}  
+  digitalWrite(m, 00);
+  delay(c-h);
+  digitalWrite(m, 01);
+  delay(c-(c-h));
+}
+void vetocity(){
+  if (Serial.available() > 0) {
+    D = Serial.read();
+    if (D == 'A')
+    {
+      h=0;
+    }
+    else if (D == 'B')
+    {
+      h=1;
+    }
+    else if (D == 'C')
+    {
+      h=2;
+    }
+    else if (D == 'D')
+    {
+      h=3;
+    }
+    else if (D == 'E')
+    {
+      h=4;
+    }
+    else if (D == 'F')
+    {
+      h=5;
+    }
+    else if (D == 'G')
+    {
+      h=6;
+    }
+    else if (D == 'H' )
+    {
+      h=7;
+    }
+    else if (D == 'I')
+    {
+      h=8;
+    }
+    else if (D == 'J')
+    {
+      h=9;
+    }
+        if (D == 'K')
+    {
+      h=10;
+    }
+    else if (D == 'L')
+    {
+      h=11;
+    }
+    else if (D == 'M')
+    {
+      h=12;
+    }
+    else if (D == 'N')
+    {
+      h=13;
+    }
+    else if (D == 'O')
+    {
+      h=14;
+    }
+    else if (D == 'P')
+    {
+      h=15;
+    }
+    else if (D == 'Q')
+    {
+      h=16;
+    }
+    else if (D == 'R' )
+    {
+      h=17;
+    }
+    else if (D == 'S')
+    {
+      h=18;
+    }
+    else if (D == 'T')
+    {
+      h=19;
+    }
+    else if (D == 'U')
+    {
+      h=20;
+    }
+  }
+}
+
+//  if(h==0||h<4){digitalWrite(m, 00);goto start;}
+//  if(h==0){digitalWrite(m, 00);goto start;} 

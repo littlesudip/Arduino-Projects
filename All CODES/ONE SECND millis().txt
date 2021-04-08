@@ -1,0 +1,12 @@
+//ONE SECND millis()
+unsigned long PT=0; 
+const long DF=1000;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+while (millis()-PT>=DF) {
+PT= millis();
+Serial.println(PT/1000);
+ }
+}

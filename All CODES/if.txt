@@ -1,0 +1,25 @@
+
+int a= 8,b=7,c=2,x=0;
+
+void setup()
+{
+int 
+}
+void loop()
+{
+if(x>0){
+  digitalWrite(a,1);
+  digitalWrite(b,0);
+}
+else if (x<0){
+  digitalWrite(a,0);
+  digitalWrite(b,1);
+   } 
+   else
+{
+    digitalWrite(a,0);
+    digitalWrite(b,0);
+    digitalWrite(c,1);
+}
+
+}

@@ -1,0 +1,21 @@
+//POINTER
+int a=2,b=3,c=4,*i,p,x=500;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop()
+{
+i=&a;  
+digitalWrite(*i,01);
+delay(x);
+digitalWrite(*i,00);
+i=&b;  
+digitalWrite(*i,01);
+delay(x);
+digitalWrite(*i,00);
+i=&c;  
+digitalWrite(*i,01);
+delay(x);
+digitalWrite(*i,00);
+}

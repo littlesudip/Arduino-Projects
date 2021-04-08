@@ -1,0 +1,13 @@
+int x=3,a=0,b=0;
+void setup() {
+  pinMode(7, OUTPUT);
+}
+void loop() {
+  digitalWrite(7,1); 
+  delay(x);                    
+  digitalWrite(7,0);
+  delay(300); 
+  a++;
+  if (a==10){x+=10;a=0;b++;} 
+  if (b==10){x=3;}    
+}

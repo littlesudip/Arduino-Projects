@@ -1,0 +1,14 @@
+//LED SLOW ON & OFF
+int a = 3, x = 1, i;
+void setup() {
+
+}
+void loop() {
+  for (i = 0; i > -1; i = i + x) {
+    analogWrite(a, i);
+    if (i <= 0 || i >= 255) {
+      x = -x;
+    }
+    delay(10);
+  }
+}

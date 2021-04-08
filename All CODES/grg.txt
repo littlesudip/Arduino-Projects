@@ -1,0 +1,23 @@
+#include<IRremote.h>
+int r=02;
+IRrecv irrecv(r);
+decode_results results;
+void setup() {
+irrecv.enableIRIn();
+pinMode(7,OUTPUT);
+pinMode(8,OUTPUT);
+}
+void loop() {
+if (irrecv.decode(&results)){
+switch(results.value){
+  case 0x40BD00FF:
+  digitalWrite(7,01);
+  digitalWrite(8,00);
+  break;
+  case 0x40BD807F:
+  digitalWrite(8,01);  
+  digitalWrite(7,00);  
+  break;
+}
+irrecv. resume();
+}}

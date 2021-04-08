@@ -1,0 +1,26 @@
+#include <SoftwareSerial.h>
+SoftwareSerial Gsm(2,3);
+String T; 
+int X=200;
+void setup(){ 
+Gsm.begin(9600);
+Serial.begin(9600);
+delay(1000);
+}
+void loop(){
+T=Serial.read(); 
+if(T>"0"){
+SMS();
+ }
+}
+void SMS(){
+Gsm.println("AT");
+delay(X);
+Gsm.println("AT+CMGF=1");
+delay(X);
+Gsm.println("AT+CMGS=\"+8801600292801\"");
+delay(X);
+Gsm.println(T);
+delay(X);
+Gsm.write((char)26);
+}

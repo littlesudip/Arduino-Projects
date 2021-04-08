@@ -1,0 +1,38 @@
+//7777
+int segPins[] = {A0, A1, A2, A3, A4, A5, A6 }; 
+byte segCode[11][8] = {
+  { 1, 1, 1, 1, 1, 1, 0},  // 0
+  { 0, 1, 1, 0, 0, 0, 0},  // 1
+  { 1, 1, 0, 1, 1, 0, 1},  // 2
+  { 1, 1, 1, 1, 0, 0, 1},  // 3
+  { 0, 1, 1, 0, 0, 1, 1},  // 4
+  { 1, 0, 1, 1, 0, 1, 1},  // 5
+  { 1, 0, 1, 1, 1, 1, 1},  // 6
+  { 1, 1, 1, 0, 0, 0, 0},  // 7
+  { 1, 1, 1, 1, 1, 1, 1},  // 8
+  { 1, 1, 1, 1, 0, 1, 1},  // 9
+  { 0, 0, 0, 0, 0, 0, 0}   // .
+};
+void displayDigit(int digit)
+{
+  for (int i=0; i < 8; i++)
+  {
+    digitalWrite(segPins[i], segCode[digit][i]);
+  }
+}
+void setup()
+{
+  for (int i=0; i < 8; i++)
+  {
+    pinMode(segPins[i], OUTPUT);
+  }
+
+ }
+void loop()
+{
+   for (int n = 0; n < 11; n++)    // display digits 0 - 9 and decimal point
+  {
+     displayDigit(n);
+     delay(1000);
+  }
+}

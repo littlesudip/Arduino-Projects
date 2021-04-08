@@ -1,0 +1,92 @@
+//Big manu
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int  b=8,b1=9,b2=10,b3=53;           
+int s=0,s1=0,s2=0,s3=0,r=0,r1=0,r2=0,r3=0,k=-1,m=0;
+char a[]="(1)Animals",a1[]="cat",a2[]="dog",a3[]="cow",a4[]="horse",a5[]="mouse";
+char v[]="(2)Bird",v1[]="Eagle",v2[]="Hawk",v3[]="Hen",v4[]="Owl",v5[]="Pigeon";
+char c[]="(3)Colour",c1[]="Orange",c2[]="Red",c3[]="Pink",c4[]="Violet",c5[]="Yellow";
+char g[]="(4)Drinks",g1[]="beer",g2[]="cocoa",g3[]="coffee",g4[]="juice",g5[]="lemonade";
+// Creates 3 custom characters for the menu display
+byte da[8] = {
+  0b00100, //   *
+  0b00100, //   *
+  0b00100, //   *
+  0b00100, //   *
+  0b00100, //   *
+  0b10101, // * * *
+  0b01110, //  ***
+  0b00100  //   *
+};
+
+byte up[8] = {
+  0b00100, //   *
+  0b01110, //  ***
+  0b10101, // * * *
+  0b00100, //   *
+  0b00100, //   *
+  0b00100, //   *
+  0b00100, //   *
+  0b00100  //   *
+};
+
+byte A[8] = {
+  B01000, //  *
+  B00100, //   *
+  B00010, //    *
+  B00001, //     *
+  B00010, //    *
+  B00100, //   *
+  B01000, //  *
+  B00000  //
+};
+void setup() {
+pinMode(b, INPUT);
+pinMode(b1, INPUT);
+pinMode(b2, INPUT);
+pinMode(b3, INPUT);
+lcd.begin(20, 4);
+}
+void loop() { 
+s= digitalRead(b);
+s1= digitalRead(b1);
+s2= digitalRead(b2);
+s3= digitalRead(b3);
+lcd.clear();
+lcd.createChar(0, A);
+lcd.createChar(1,up);
+lcd.createChar(2,da);
+if (s!=r) {
+if (s==1) {
+k++;
+if(k>=3){k=-1;}} 
+}
+else if (s1!=r1) {
+if (s1==1) {
+k--;
+if(k<=-1){k=3;}} 
+}
+else if (s2!=r2) {
+if (s2==1) {
+m++;
+if(m<=1){m=4;}} 
+}
+else if (s3!=r3) {
+if (s3==1) {
+m--;
+if(m<=1){m=4;}} 
+}
+r=s;r1=s1,r2=s2;
+if(k>=-1||k<=3){
+lcd.setCursor(0,k);
+lcd.write(byte(0));  
+lcd.setCursor(1,0);
+lcd.print(a);
+lcd.setCursor(1,k+1);
+lcd.print(v);
+lcd.setCursor(1,k+2);
+lcd.print(c);
+lcd.setCursor(1,k+3);
+lcd.print(g);}
+}

@@ -1,0 +1,28 @@
+//RF TAMPARATURE TRANSMITTER
+#include <RH_ASK.h>
+#include <SPI.h>
+#include "DHT.h";
+#define DHTPIN 7
+#define DHTTYPE DHT22
+float hum;
+float temp;
+String str_humid;
+String str_temp;
+String str_out;
+RH_ASK rf_driver;
+DHT dht(DHTPIN, DHTTYPE);
+void setup() {
+  rf_driver.init();
+  dht.begin();
+}
+void loop() {
+  delay(2000);
+  hum = dht.readHumidity();
+  temp = dht.readTemperature();
+  str_humid = String(hum);
+  str_temp = String(temp);
+  str_out = str_humid + "," + str_temp;
+  static char *msg = str_out.c_str();
+  rf_driver.send((uint8_t *)msg, strlen(msg));
+  rf_driver.waitPacketSent();
+}

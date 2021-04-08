@@ -1,0 +1,16 @@
+//EVEN On led (continue)
+int p, a, f = 22, l = 41;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  for (a = f; a <= l; a++) {
+    if (a % 2 == 0) {
+      continue;
+    }
+    digitalWrite(a, 01);
+  }
+}

@@ -1,0 +1,27 @@
+//ALL ON (enum)
+int a,f=22,l=40;
+enum LED{p=22,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17};
+void setup() {  
+for(a=f;a<=l;a++)
+{pinMode(a, OUTPUT);}
+}
+void loop() {
+  digitalWrite(p,01);                
+  digitalWrite(p1,01);   
+  digitalWrite(p2,01);                
+  digitalWrite(p3,01); 
+  digitalWrite(p4,01);                
+  digitalWrite(p5,01);   
+  digitalWrite(p6,01);                
+  digitalWrite(p7,01);
+  digitalWrite(p8,01);                
+  digitalWrite(p9,01);   
+  digitalWrite(p10,01);                
+  digitalWrite(p11,01); 
+  digitalWrite(p12,01);                
+  digitalWrite(p13,01);   
+  digitalWrite(p14,01);                
+  digitalWrite(p15,01);   
+  digitalWrite(p16,01);                
+  digitalWrite(p17,01); 
+} 

@@ -1,0 +1,20 @@
+//Dual LED if
+ int x=02;
+ int y=04;
+void setup() {
+
+  pinMode(02, OUTPUT );  
+  pinMode(04, OUTPUT);
+}
+void loop() {
+  digitalWrite(02, HIGH);
+  if (x!=y)
+  digitalWrite(04, LOW);   
+  delay(500);             
+  digitalWrite(02, LOW);
+  if (x!=y)
+  digitalWrite(04, HIGH);   
+  delay(500);    
+ 
+            
+}

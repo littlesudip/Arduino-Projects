@@ -1,0 +1,55 @@
+#include <SoftwareSerial.h>
+SoftwareSerial Gsm(2,3);
+char M; 
+int p1=4,p2=5,p3=6,p4=7;
+void setup(){
+Gsm.begin(9600);
+pinMode(p1,OUTPUT);
+pinMode(p2,OUTPUT);
+pinMode(p3,OUTPUT);
+pinMode(p4,OUTPUT);
+delay(2000);  
+Gsm.print("AT+CMGF=1\r");
+delay(100);
+Gsm.print("AT+CNMI=2,2,0,0,0\r");
+delay(100);
+}
+void loop(){
+if(Gsm.available() >0){  
+M=Gsm.read();
+if (M=='#'){
+delay(10);    
+M=Gsm.read();
+if (M=='A'){
+delay(10);  
+M=Gsm.read();
+if (M=='1'){digitalWrite(p1,01);} 
+else if (M=='0'){digitalWrite(p1,00);} 
+}
+delay(10);
+M=Gsm.read();
+if (M=='B'){
+delay(10);  
+M=Gsm.read();
+if (M=='1'){digitalWrite(p2,01);} 
+else if (M=='0'){digitalWrite(p2,00);} 
+}
+delay(10);
+M=Gsm.read();
+if (M=='C'){
+delay(10);  
+M=Gsm.read();
+if (M=='1'){digitalWrite(p3,01);} 
+else if (M=='0'){digitalWrite(p3,00);} 
+}
+delay(10);
+M=Gsm.read();
+if (M=='D'){
+delay(10);  
+M=Gsm.read();
+if (M=='1'){digitalWrite(p4,01);} 
+else if (M=='0'){digitalWrite(p4,00);} 
+}
+}
+}
+}

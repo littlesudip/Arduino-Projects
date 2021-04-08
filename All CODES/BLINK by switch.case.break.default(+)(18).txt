@@ -1,0 +1,87 @@
+// BLINK by switch/case/break/default(+)(18)
+int a=15,p; 
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop(){
+   switch (a) {
+    case 1:
+      digitalWrite(2,01);
+      break;
+    case 2:
+      digitalWrite(3,01);
+      break;
+    case 3:
+      digitalWrite(3,01);
+      break;
+    case 4:
+      digitalWrite(4,01);
+      break;
+    case 5:
+      digitalWrite(5,01);
+      break;
+    case 6:
+      digitalWrite(6,01);
+      break;
+    case 7:
+      digitalWrite(7,01);
+      break;
+    case 8:
+      digitalWrite(8,01);
+      break;
+    case 9:
+      digitalWrite(9,01);
+      break;
+    case 10:
+      digitalWrite(10,01);
+      break;
+     case 11:
+      digitalWrite(11,01);
+      break;
+    case 12:
+      digitalWrite(12,01);
+      break; 
+    case 13:
+      digitalWrite(13,01);
+      break;
+    case 14:
+      digitalWrite(14,01);
+      break;
+    case 15:
+      digitalWrite(15,01);
+      break;
+    case 16:
+      digitalWrite(16,01);
+      break;
+    case 17:
+      digitalWrite(17,01);
+      break;
+    case 18:
+      digitalWrite(18,01);
+      break;
+    case 19:
+      digitalWrite(19,01);
+      break;
+    default:   
+ digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00);
+    break;
+  }
+}

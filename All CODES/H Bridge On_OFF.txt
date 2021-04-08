@@ -1,0 +1,44 @@
+int x,p=2,p1=3,b=4,b1=5,b2=6,s=0,s1=0,s2=0,r=0,r1=0,r2=0;
+void setup() {
+  pinMode(p, OUTPUT);
+  pinMode(p1, OUTPUT);
+  pinMode(b,INPUT);
+  pinMode(b1,INPUT); 
+  pinMode(b2,INPUT);   
+}
+void loop() {
+  Button();
+  if(x==0){
+  digitalWrite(p,01);                
+  digitalWrite(p1,01);
+  } 
+  else if(x==1){  
+  digitalWrite(p,01);                
+  digitalWrite(p1,00); 
+  }
+  else if(x==2){  
+  digitalWrite(p,00);                
+  digitalWrite(p1,01); 
+  }  
+}
+void Button(){
+   s = digitalRead(b);
+   s1= digitalRead(b1);
+   s2= digitalRead(b2);
+  if (s!=r) {
+    if (s==1) {
+      x=0;
+    } 
+  } 
+  else if (s1!=r1) {
+    if (s1==1) {
+      x=1;
+    } 
+  } 
+  else if (s2!=r2) {
+    if (s2==1) {
+      x=2;
+    } 
+  } 
+  r=s,r1=s1,r2=s2;
+}

@@ -1,0 +1,372 @@
+//ALL ON (FOR,IF)(-)
+int p,x=100;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop()
+{
+for (int v=17;v>= 0;v--){
+delay(x);
+if (v==0){
+  digitalWrite(2,01);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+   }            
+   if (v==1)
+{
+  digitalWrite(2,00);                
+  digitalWrite(3,01);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==2){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,01);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==3){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,01); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==4){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,01);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==5){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,01);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==6){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,01);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==7){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,01);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==8){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,01);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==9){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,01);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==10){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,01);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==11){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,01);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==12){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,01);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==13){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,01);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==14){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,01);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==15){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,01);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00); 
+}
+if(v==16){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,01);                
+  digitalWrite(19,00); 
+}
+if(v==17){
+  digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,01); 
+}
+}}

@@ -1,0 +1,32 @@
+// BLINK HALF
+int a, a1, p, f = 30, l = 50, x = 500;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop()
+{ if ((l - f) % 2 == 1) {
+    for (a = f, a1 = f + ((l - f) + 1) / 2; a <= f + ((l - f) + 1) / 2, a1 <= l; a++, a1++) {
+      digitalWrite(a, 01);
+      digitalWrite(a1, 00);
+    } delay(x);
+    for (a = f, a1 = f + ((l - f) + 1) / 2; a <= f + ((l - f) + 1) / 2, a1 <= l; a++, a1++) {
+      digitalWrite(a, 00);
+      digitalWrite(a1, 01);
+    }
+    delay(x);
+  }
+  else {
+    for (a = f, a1 = f + ((l - f) / 2); a <= f + ((l - f) / 2), a1 <= l - 1; a++, a1++) {
+      digitalWrite(a, 01);
+      digitalWrite(a1, 00);
+    } delay(x);
+    for (a = f, a1 = f + ((l - f) / 2); a <= f + ((l - f) / 2), a1 <= l - 1; a++, a1++) {
+      digitalWrite(a, 00);
+      digitalWrite(a1, 01);
+    } 
+    delay(x);
+  }
+}

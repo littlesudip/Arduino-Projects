@@ -1,0 +1,16 @@
+//ALL CROSS BLINK time vary(18)
+int p,f=2,l=19,a=5,x=100;
+void setup() {  
+for(p=f;p<=l;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop() {
+for (int a=f,b=l;a<=l,b>=f;a++,b--){
+ digitalWrite(a,01);
+ digitalWrite(b,01);     
+ delay(x);
+ digitalWrite(a,00);
+ digitalWrite(b,00);
+ }x-=a;
+ if(x<10){x=100;}
+}

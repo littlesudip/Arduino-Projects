@@ -1,0 +1,305 @@
+//Rfdvdfv
+#include <RH_ASK.h>
+#include <SPI.h>
+RH_ASK R;
+int v, p, f = 22, l = 41, A = A4;
+void setup() {
+  R.init();
+    for (p = f; p <= l; p++){
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  uint8_t M[2];
+  uint8_t D = sizeof(M);
+  if (R.recv(M, &D)) {
+    for (int i = 0; i < D; i++) {
+  if (M[i] >= "0" && M[i] <= "49") {
+    digitalWrite(f, 01);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (M[i] >= "50" && M[i] <= "99") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 01);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (M[i] >= "100" && M[i] <= "149") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 01);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (M[i] >= "150" && M[i] <= "299") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 01);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (M[i] >= "300" && M[i] <= "349") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 01);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "350" && v <= "399") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 01);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "400" && v <= "449") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 01);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "450" && v <= "599 {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 01);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+    digitalWrite(f + 16, 00); }
+  if (v >= "600" && v <= "649") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 01);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "650" && v <= "699") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 01);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "700" && v <= "749") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 01);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "750" && v <= "799") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 01);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "800" && v <= "849") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 01);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "850" && v <= "899") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 01);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "900" && v <= "949") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 01);
+    digitalWrite(f + 15, 00);
+  }
+  if (v >= "950" && v <= "999") {
+    digitalWrite(f, 00);
+    digitalWrite(f + 1, 00);
+    digitalWrite(f + 2, 00);
+    digitalWrite(f + 3, 00);
+    digitalWrite(f + 4, 00);
+    digitalWrite(f + 5, 00);
+    digitalWrite(f + 6, 00);
+    digitalWrite(f + 7, 00);
+    digitalWrite(f + 8, 00);
+    digitalWrite(f + 9, 00);
+    digitalWrite(f + 10, 00);
+    digitalWrite(f + 11, 00);
+    digitalWrite(f + 12, 00);
+    digitalWrite(f + 13, 00);
+    digitalWrite(f + 14, 00);
+    digitalWrite(f + 15, 01);
+  }
+}

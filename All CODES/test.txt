@@ -1,0 +1,107 @@
+//test Button Binary to led(14)
+const int v=A2,v1=A3,v2=A4,v3=A5;    
+const int p=2,p1=3,p2=4,p3=5,p4=6,p5=7,p6=8,p7=9,p8=10,p9=11,p10=12,p11=13,p12=14,p13=15; 
+int s=0,s1=0,s2=0,s3=0;    
+void setup() {
+  pinMode(p, OUTPUT);
+  pinMode(p1, OUTPUT);
+  pinMode(p2, OUTPUT);
+  pinMode(p3, OUTPUT);
+  pinMode(p4, OUTPUT);
+  pinMode(p5, OUTPUT);
+  pinMode(p6, OUTPUT);
+  pinMode(p7, OUTPUT);
+  pinMode(p8, OUTPUT);
+  pinMode(p9, OUTPUT);
+  pinMode(p10, OUTPUT);
+  pinMode(p11, OUTPUT);
+  pinMode(p12, OUTPUT);
+  pinMode(p13, OUTPUT);
+  pinMode(v,INPUT);
+  pinMode(v1,INPUT);
+  pinMode(v2,INPUT);
+  pinMode(v3,INPUT);  
+}
+void loop() {
+  s= digitalRead(v);
+  s1= digitalRead(v1);
+  s2= digitalRead(v2);
+  s3= digitalRead(v3);
+    
+  if (s3==0&&s2==0&&s1==0&&s==1) {
+    digitalWrite(p,1);
+  } else {
+    digitalWrite(p,0);
+  }
+    if (s3==0&&s2==0&&s1==1&&s==0) {
+    digitalWrite(p1,1);
+  } else {
+    digitalWrite(p1,0);
+  }
+    if (s3==0&&s2==0&&s1==1&&s==1) {
+    digitalWrite(p2,1);
+  } else {
+    digitalWrite(p2,0);
+  }
+    if (s3==0&&s2==1&&s1==0&&s==0) {
+    digitalWrite(p3,1);
+  } else {
+    digitalWrite(p3,0);
+  }
+    if (s3==0&&s2==1&&s1==0&&s==1) {
+    digitalWrite(p4,1);
+  } else {
+    digitalWrite(p4,0);
+  }
+    if (s3==0&&s2==1&&s1==1&&s==0) {
+    digitalWrite(p5,1);
+  } else {
+    digitalWrite(p5,0);
+  }
+    if (s3==0&&s2==1&&s1==1&&s==1) {
+    digitalWrite(p6,1);
+  } else {
+    digitalWrite(p6,0);
+  }
+    if (s3==1&&s2==0&&s1==0&&s==0) {
+    digitalWrite(p7,1);
+  } else {
+    digitalWrite(p7,0);
+  }
+    if (s3==1&&s2==0&&s1==0&&s==1) {
+    digitalWrite(p8,1);
+  } else {
+    digitalWrite(p8,0);
+  }
+    if (s3==1&&s2==0&&s1==1&&s==0) {
+    digitalWrite(p9,1);
+  } else {
+    digitalWrite(p9,0);
+  }
+    if (s3==1&&s2==0&&s1==1&&s==1) {
+    digitalWrite(p10,1);
+  } else {
+    digitalWrite(p10,0);
+  }
+    if (s3==1&&s2==1&&s1==0&&s==0) {
+    digitalWrite(p11,1);
+  } else {
+    digitalWrite(p11,0);
+  }
+    if (s3==1&&s2==1&&s1==0&&s==1) {
+    digitalWrite(p12,1);
+  } else {
+    digitalWrite(p12,0);
+  }
+    if (s3==1&&s2==1&&s1==1&&s==0) {
+    digitalWrite(p13,1);
+  } else {
+    digitalWrite(p13,0);
+  }
+      if (s3==1&&s2==1&&s1==1&&s==1) {
+    digitalWrite(p13,1);
+    digitalWrite(p,1);
+  } else {
+    digitalWrite(p13,0);
+  }
+}

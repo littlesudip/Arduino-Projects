@@ -1,0 +1,16 @@
+//ALL BLINK-18
+int p,a,f=2,l=19,x=500;
+void setup() {  
+for(p=f;p<=l;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop() {
+  for (a = f; a <= l; a++) {
+    digitalWrite(a, 00);
+  }
+  delay(x);
+  for (a = f; a <= l; a++) {
+    digitalWrite(a, 01);
+  }
+  delay(x);      
+} 

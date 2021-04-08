@@ -1,0 +1,14 @@
+//FUNCTION
+void setup(){
+  pinMode(2, OUTPUT);
+}
+void loop() {
+  int k,j=1,i=1;
+  k = a(i, j); 
+  digitalWrite(k,01);
+}
+int a(int x, int y){
+  int r;
+  r = x+y;
+  return r;
+}

@@ -1,0 +1,21 @@
+//TIME
+int p,s=0,m=0;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop()
+{
+ for (int s=1;s<=60;s++){
+ digitalWrite(19,00);
+ delay(950);
+ digitalWrite(19,01);
+ delay(50);
+ }
+ if (s==60)
+ m++;
+ digitalWrite(m,01);
+ digitalWrite(m-1,00);
+ if(m<=18)
+ m=2;
+}

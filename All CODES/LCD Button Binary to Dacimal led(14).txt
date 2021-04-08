@@ -1,0 +1,137 @@
+//LCD Button Binary to Dacimal led(14)
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int v=50,v1=51,v2=52,v3=53;    
+const int p=30,p1=31,p2=32,p3=33,p4=34,p5=35,p6=36,p7=37,p8=38,p9=39,p10=40,p11=41,p12=42,p13=43; 
+int s=0,s1=0,s2=0,s3=0,a,l;    
+void setup() {
+  pinMode(p, OUTPUT);
+  pinMode(p1, OUTPUT);
+  pinMode(p2, OUTPUT);
+  pinMode(p3, OUTPUT);
+  pinMode(p4, OUTPUT);
+  pinMode(p5, OUTPUT);
+  pinMode(p6, OUTPUT);
+  pinMode(p7, OUTPUT);
+  pinMode(p8, OUTPUT);
+  pinMode(p9, OUTPUT);
+  pinMode(p10, OUTPUT);
+  pinMode(p11, OUTPUT);
+  pinMode(p12, OUTPUT);
+  pinMode(p13, OUTPUT);
+  pinMode(v,INPUT);
+  pinMode(v1,INPUT);
+  pinMode(v2,INPUT);
+  pinMode(v3,INPUT);
+  lcd.begin(20,4);
+}
+void loop() {
+  s= digitalRead(v);
+  s1= digitalRead(v1);
+  s2= digitalRead(v2);
+  s3= digitalRead(v3);
+  l=0;
+  a=s*pow(2,0)+s1*pow(2,1)+s2*pow(2,2)+s3*pow(2,3) ; 
+  if (a==1) {
+    digitalWrite(p,1);l=1;  
+  } else {
+    digitalWrite(p,0);
+  }
+    if (a==2) {
+    digitalWrite(p1,1);l=2;  
+  } else {
+    digitalWrite(p1,0);
+  }
+    if (a==3) {
+    digitalWrite(p2,1);l=3;  
+  } else {
+    digitalWrite(p2,0);
+  }
+    if (a==4) {
+    digitalWrite(p3,1);l=4;  
+  } else {
+    digitalWrite(p3,0);
+  }
+    if (a==5) {
+    digitalWrite(p4,1);l=5;  
+  } else {
+    digitalWrite(p4,0);
+  }
+    if (a==6) {
+    digitalWrite(p5,1);l=6;  
+  } else {
+    digitalWrite(p5,0);
+  }
+    if (a==7) {
+    digitalWrite(p6,1);l=7;  
+  } else {
+    digitalWrite(p6,0);
+  }
+    if (a==8) {
+    digitalWrite(p7,1);l=8;  
+  } else {
+    digitalWrite(p7,0);
+  }
+    if (a==9) {
+    digitalWrite(p8,1);l=9;  
+  } else {
+    digitalWrite(p8,0);
+  }
+    if (a==10) {
+    digitalWrite(p9,1);l=10;  
+  } else {
+    digitalWrite(p9,0);
+  }
+    if (a==11) {
+    digitalWrite(p10,1);l=11;  
+  } else {
+    digitalWrite(p10,0);
+  }
+    if (a==12) {
+    digitalWrite(p11,1);l=12;  
+  } else {
+    digitalWrite(p11,0);
+  }
+    if (a==13){
+    digitalWrite(p12,1);l=13;  
+  } else {
+    digitalWrite(p12,0);
+  }
+    if (a==14){
+    digitalWrite(p13,1);l=14;  
+  } else {
+    digitalWrite(p13,0);
+  }
+      if (a==15) {
+    digitalWrite(p13,1);l=15;  
+    digitalWrite(p,1);
+  } else {
+    digitalWrite(p13,0);
+    if (a==0) {
+      digitalWrite(p,0);
+      digitalWrite(p1,0);
+      digitalWrite(p2,0);
+      digitalWrite(p3,0);
+      digitalWrite(p4,0);
+      digitalWrite(p5,0);
+      digitalWrite(p6,0);
+      digitalWrite(p7,0);
+      digitalWrite(p10,0);
+      digitalWrite(p11,0);
+      digitalWrite(p12,0);
+      digitalWrite(p13,0);
+   }   
+lcd.setCursor(1,1);
+lcd.print("BINARY NUMBER=");
+lcd.print(s3); 
+lcd.print(s2);
+lcd.print(s1);
+lcd.print(s);
+lcd.setCursor(6,2);
+lcd.print("LED ON=");
+lcd.print(l);
+delay (300); 
+lcd.clear(); 
+  }
+}

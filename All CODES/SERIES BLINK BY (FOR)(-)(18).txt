@@ -1,0 +1,14 @@
+//SERIES BLINK BY (FOR)(-)(18)
+int p,x=100;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop()
+{
+   for (int a=19; a>=2;a--){
+ digitalWrite(a,01);
+      delay(x);
+      digitalWrite(a,00);
+   } 
+}

@@ -1,0 +1,22 @@
+//LCD char 4 sentance
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+char a[]="BLOOD IS RED";
+char a1[]="SKY IS BLUE";
+char a2[]="WATER HAVE NO COLOUR";
+char a3[]="MILK IS WHITE";
+void setup() {
+  lcd.begin(20,4);
+
+}
+void loop() {
+lcd.setCursor(0,0);
+lcd.print(a);
+lcd.setCursor(0,1);
+lcd.print(a1);
+lcd.setCursor(0,2);
+lcd.print(a2);
+lcd.setCursor(0,3);
+lcd.print(a3);
+}

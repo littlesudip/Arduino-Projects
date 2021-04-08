@@ -1,0 +1,30 @@
+
+int a= 8,b=7,c=2;
+
+void setup()
+{
+
+}
+void loop()
+{
+     for (int x=-1; x <= 1; x++){
+           delay(1000);
+if (x<0){
+  digitalWrite(a,0);
+  digitalWrite(b,1);
+  digitalWrite(c,0);
+   }            
+
+   if (x==0)
+{
+    digitalWrite(a,0);
+    digitalWrite(b,0);
+    digitalWrite(c,1);
+}
+if(x>0){
+  digitalWrite(a,1);
+  digitalWrite(b,0);
+  digitalWrite(c,0);
+}
+
+}}

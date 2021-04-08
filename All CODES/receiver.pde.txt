@@ -1,0 +1,89 @@
+// receiver.pde
+#include <VirtualWire.h>
+int count;
+const int buttonPin0 = 10;
+const int buttonPin1 = 11;
+const int buttonPin2 = 13;
+const int buttonPin3 = 14;
+const int buttonPin4 = 15;
+const int buttonPin5 = 16;
+const int buttonPin6 = 17;
+const int buttonPin7 = 18;
+void setup() {
+  pinMode(ledPin0, OUTPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  pinMode(ledPin4, OUTPUT);
+  pinMode(ledPin5, OUTPUT);
+  pinMode(ledPin6, OUTPUT);
+  pinMode(ledPin7, OUTPUT);
+  digitalWrite(ledPin8, LOW);
+  vw_set_rx_pin(13);
+  vw_setup(4000);
+  vw_rx_start();
+}
+void loop() {
+  uint8_t buf[VW_MAX_MESSAGE_LEN];
+  uint8_t buflen = VW_MAX_MESSAGE_LEN;
+  if (vw_get_message(buf, &buflen)) {
+    int i;
+    for (i = 0; i < buflen; i++) {
+      char c = (buf[i]);
+      Serial.print(c);
+      Serial.print(" ");
+      if (buf[i] == '0') {
+        digitalWrite(ledPin0, HIGH);
+      }
+      if (buf[i] == '1') {
+        digitalWrite(ledPin0, LOW);
+      }
+      if (buf[i] == '2') {
+        digitalWrite(ledPin1, HIGH);
+      }
+      if (buf[i] == '3') {
+        digitalWrite(ledPin1, LOW);
+      }
+      if (buf[i] == '4') {
+        digitalWrite(ledPin2, HIGH);
+      }
+      if (buf[i] == '5') {
+        digitalWrite(ledPin2, LOW);
+      }
+      if (buf[i] == '6')
+      {
+        digitalWrite(ledPin3, HIGH);
+      }
+      if (buf[i] == '7') {
+        digitalWrite(ledPin3, LOW);
+      }
+      if (buf[i] == '8') {
+        digitalWrite(ledPin4, HIGH);
+      }
+      if (buf[i] == '9') {
+        digitalWrite(ledPin4, LOW);
+      }
+      if (buf[i] == 'a') {
+        digitalWrite(ledPin5, HIGH);
+      }
+      if (buf[i] == 'b')
+      {
+        digitalWrite(ledPin5, LOW);
+      }
+      if (buf[i] == 'c')
+      {
+        digitalWrite(ledPin6, HIGH);
+      }
+      if (buf[i] == 'd')
+      {
+        digitalWrite(ledPin6, LOW);
+      }
+      if (buf[i] == 'e')
+      {
+        digitalWrite(ledPin7, HIGH);
+      }
+    }
+  }
+}
+
+

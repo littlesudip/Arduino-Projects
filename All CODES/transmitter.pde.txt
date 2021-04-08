@@ -1,0 +1,129 @@
+// transmitter.pde
+#include <VirtualWire.h>
+const int buttonPin0 = 10;
+const int buttonPin1 = 11;
+const int buttonPin2 = 13;
+const int buttonPin3 = 14;
+const int buttonPin4 = 15;
+const int buttonPin5 = 16;
+const int buttonPin6 = 17;
+const int buttonPin7 = 18;
+int buttonState0 = 0;
+int buttonState1 = 0;
+int buttonState2 = 0;
+int buttonState3 = 0;
+int buttonState4 = 0;
+int buttonState5 = 0;
+int buttonState6 = 0;
+int buttonState7 = 0;
+void setup() {
+  pinMode(buttonPin0, INPUT);
+  pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin2, INPUT);
+  pinMode(buttonPin3, INPUT);
+  pinMode(buttonPin4, INPUT);
+  pinMode(buttonPin5, INPUT);
+  pinMode(buttonPin6, INPUT);
+  pinMode(buttonPin7, INPUT);
+  vw_set_tx_pin(13);
+}
+void loop() {
+  buttonState0 = digitalRead(buttonPin0);
+  buttonState1 = digitalRead(buttonPin1);
+  buttonState2 = digitalRead(buttonPin2);
+  buttonState3 = digitalRead(buttonPin3);
+  buttonState4 = digitalRead(buttonPin4);
+  buttonState5 = digitalRead(buttonPin5);
+  buttonState6 = digitalRead(buttonPin6);
+  buttonState7 = digitalRead(buttonPin7);
+  const char *msg0 = "0";
+  const char *msg1 = "1";
+  const char *msg2 = "2";
+  const char *msg3 = "3";
+  const char *msg4 = "4";
+  const char *msg5 = "5";
+  const char *msg6 = "6";
+  const char *msg7 = "7";
+  const char *msg8 = "8";
+  const char *msg9 = "9";
+  const char *msg10 = "a";
+  const char *msg11 = "b";
+  const char *msg12 = "c";
+  const char *msg13 = "d";
+  const char *msg14 = "e";
+  if (buttonState0 == HIGH) {
+    vw_send((uint8_t *)msg0, strlen(msg0));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg1, strlen(msg1));
+    vw_wait_tx();
+  }
+  if (buttonState1 == HIGH) {
+    vw_send((uint8_t *)msg2, strlen(msg2));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg3, strlen(msg3));
+    vw_wait_tx();
+  }
+  if (buttonState2 == HIGH) {
+    vw_send((uint8_t *)msg4, strlen(msg4));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg5, strlen(msg5));
+    vw_wait_tx();
+
+  }
+  if (buttonState3 == HIGH) {
+    vw_send((uint8_t *)msg6, strlen(msg6));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg7, strlen(msg7));
+    vw_wait_tx();
+  }
+  if (buttonState4 == HIGH) {
+    vw_send((uint8_t *)msg8, strlen(msg8));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg9, strlen(msg9));
+    vw_wait_tx();
+  }
+  if (buttonState5 == HIGH) {
+    vw_send((uint8_t *)msg10, strlen(msg10));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg11, strlen(msg11));
+    vw_wait_tx();
+  }
+
+  if (buttonState6 == HIGH) {
+    vw_send((uint8_t *)msg12, strlen(msg12));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg13, strlen(msg13));
+    vw_wait_tx();
+  }
+
+  if (buttonState7 == HIGH) {
+    vw_send((uint8_t *)msg14, strlen(msg14));
+    vw_wait_tx();
+    delay(30);
+  }
+  else {
+    vw_send((uint8_t *)msg15, strlen(msg15));
+    vw_wait_tx();
+  }
+}

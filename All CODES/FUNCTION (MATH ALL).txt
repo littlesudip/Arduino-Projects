@@ -1,0 +1,31 @@
+//FUNCTION (+,-,*,/)
+int a,s,m,d;
+void setup(){
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(12, OUTPUT);
+}
+void loop() {
+  int k,j=2,i=6;
+  k=A(i, j); 
+  digitalWrite(k,01);
+  k=S(i, j); 
+  digitalWrite(k,01);
+  k=M(i, j); 
+  digitalWrite(k,01);
+  k=D(i, j); 
+  digitalWrite(k,01);
+}
+int A(int x, int y){
+  a= x+y;
+  return a;}
+int S(int x, int y){
+  s=x-y;
+  return s;}
+int M(int x,int y){
+  m= x*y;
+  return m;}
+int D(int x,int y){
+  d= x/y;
+  return d;}

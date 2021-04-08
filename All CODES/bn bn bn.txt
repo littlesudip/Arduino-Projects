@@ -1,0 +1,109 @@
+#include<IRremote.h>
+int r=19,C,x=100;
+IRrecv s(r);
+decode_results c;
+//            a,b,c,d,e,f,g             
+int a[1][7]={{0,1,1,0,0,0,0}};
+int b[1][7]={{1,1,0,1,1,0,1}};                 
+int k[1][7]={{1,1,1,1,0,0,1}};              
+int d[1][7]={{0,1,1,0,0,1,1}};                 
+int e[1][7]={{1,0,1,1,0,1,1}};                
+int f[1][7]={{1,0,1,1,1,1,1}};                 
+int g[1][7]={{1,1,1,0,0,0,0}};
+int h[1][7]={{1,1,1,1,1,1,1}};
+int i[1][7]={{1,1,1,1,0,1,1}};
+int j[1][7]={{1,1,1,1,1,1,0}}; 
+int p;                 
+void setup() { 
+s.enableIRIn();   
+for(p=2;p<=9;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop() {
+if (s.decode(&c)){  
+if (c.value==0xDA28F020 || c.value==0xDA28F020 && c.value==0xFFFFFFFF){
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,a[0][C]);}             
+}
+if (c.value==0xDCB93B93 || c.value==0xDCB93B93 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,b[0][C]);}
+}
+if(c.value==0xE9D77D18 || c.value==0xE9D77D18 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,k[0][C]);}
+}
+if( c.value==0x35974D2F || c.value==0x35974D2F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,d[0][C]);}
+}
+if(c.value==0xC0E821D2 || c.value==0xC0E821D2 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,e[0][C]);}
+}
+if(c.value==0x5061D043|| c.value==0x5061D043 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,f[0][C]);}
+}
+if(c.value==0x5D8011C8 || c.value==0x5D8011C8 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,g[0][C]);}
+}
+if(c.value==0x71D06673 || c.value==0x71D06673 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,h[0][C]);}
+}
+if(c.value==0xFD213B16 || c.value==0xFD213B16 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,i[0][C]);}
+}
+if(c.value==0x4B3D41B9 || c.value==0x4B3D41B9 && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,j[0][C]);}
+}
+if(c.value==0x5105CA72 || c.value==0x5105CA72 && c.value==0xFFFFFFFF){
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,a[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,b[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,k[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,d[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,e[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,f[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,g[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,h[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,i[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,j[0][C]);delay(x);} 
+}
+if(c.value==0xC5B4F5CF || c.value==0xC5B4F5CF && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,j[0][C]);delay(x);}
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,i[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,h[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,g[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,f[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,e[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,d[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,k[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,b[0][C]);delay(x);} 
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,a[0][C]);delay(x);} 
+}
+s. resume();
+} }

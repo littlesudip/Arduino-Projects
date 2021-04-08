@@ -1,0 +1,51 @@
+#include <RH_ASK.h>
+#include <SPI.h>
+RH_ASK R;
+int m=13,c=7,h=0;
+void setup() {
+ R.init();
+ pinMode(m, OUTPUT);
+}
+void loop() { 
+  Start:
+  vetocity();    
+  digitalWrite(m, 00);
+  delay(c-h);
+  if(h==0){goto Start;}  
+  digitalWrite(m, 01);
+  vetocity();  
+  delay(c-(c-h));
+}
+void vetocity(){
+  uint8_t M[1];
+  uint8_t D = sizeof(M);
+  start:
+  if (R.recv(M, &D)) {
+    for (int i = 0; i < D; i++) {
+      if (M[i] == '0') {
+        h=0;
+      }
+      else if (M[i] == '1') {
+        h=1;
+      }
+      else if (M[i] == '2') {
+        h=2;
+      }
+      else if (M[i] == '3') {
+        h=3;
+      }
+      else if (M[i] == '4') {
+        h=4;
+      }
+      else if (M[i] == '5') {
+        h=5;
+      }
+      else if (M[i] == '6') {
+        h=6;
+      }
+      else if (M[i] == '7') {
+        h=7;
+      }
+    }
+  }
+}

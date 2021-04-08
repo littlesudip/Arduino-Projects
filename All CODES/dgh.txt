@@ -1,0 +1,12 @@
+digitalWrite(x,y);
+Serial.begin(9600);
+Serial.println(x);
+Serial.print("x: ");
+unsigned long
+const long
+LED_BUILTIN
+pinMode(n, OUTPUT);
+analogRead(A0)
+map
+tone
+noTone(8);

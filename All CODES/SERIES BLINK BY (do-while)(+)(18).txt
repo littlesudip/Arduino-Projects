@@ -1,0 +1,16 @@
+//SERIES BLINK BY (do-while)(+)(18)
+int p,x=100,a;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop()
+{  a=2;
+  do{
+     digitalWrite(a,01);
+     delay(x);
+     digitalWrite(a,00);
+     a++;
+  }
+   while( a<=19);
+}

@@ -1,0 +1,88 @@
+//Function 4 batton x
+const int v = 52;
+int a, a1, p, o, e, s = 0, z = 0, c = 0, f = 30, l = 49, x = 100;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+  pinMode(v, INPUT);
+}
+void loop() {
+  s = digitalRead(v);
+  if (s != z) {
+    if (s == 1) {
+      c++;
+      if (c > 3) {
+        c = 0;
+      }
+    }
+  }
+  z = s;
+  if (c == 0) {
+    A();
+  }
+  else if (c == 1) {
+    B();
+  }
+  else if (c == 2) {
+    O();
+  }
+  else if (c == 3) {
+    M();
+  }
+}
+void A()
+{
+  for (a = f; a <= l; a++) {
+    if (s == 1) {
+      break;c++;
+    }
+    digitalWrite(a, 01);
+    delay(x);
+    digitalWrite(a, 00);
+
+  }
+}
+void B()
+{
+  for (int a = l; a >= f; a--) {
+    if (s == 1) {
+      break;c++;
+    }
+    digitalWrite(a, 01);
+    delay(x);
+    digitalWrite(a, 00);
+  }
+}
+void O() {
+  for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    if (s == 1) {
+      break;c++;
+    }
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+  }
+  delay(x);
+}
+void M() {
+  for (a = f; a <= l; a++) {
+    if (s == 1) {
+      break;c++;
+    }
+    digitalWrite(a, 00);
+  }
+  delay(x);
+  for (a = f; a <= l; a++) {
+    if (s == 1) {
+      break;c++;
+    }
+    digitalWrite(a, 01);
+  }
+  delay(x);
+}

@@ -1,0 +1,18 @@
+//Dual LED if
+// Dim an LED using a PWM pin
+int PWMpin = 5; // LED in series with 470 ohm resistor on pin 10
+int PWMpin1 = 6;
+void setup()
+{
+  // no setup needed
+}
+void loop()
+{
+   int x = 1;
+   for (int i = 0; i > -1; i = i + x){
+      analogWrite(PWMpin, i);
+      analogWrite(PWMpin1, i);
+      if (i == 255) x = -1;             // switch direction at peak
+      delay(10);
+   } 
+}

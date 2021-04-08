@@ -1,0 +1,62 @@
+//SERIAL BLINK BY delay(x)
+int p,x=100;
+void setup() {  
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}  
+}
+void loop() {
+  digitalWrite(19,00);                 
+  digitalWrite(2,01);
+  delay(x); 
+  digitalWrite(2,00);                 
+  digitalWrite(3,01);
+  delay(x); 
+  digitalWrite(3,00);      
+  digitalWrite(4,01);
+  delay(x); 
+  digitalWrite(4,00);                  
+  digitalWrite(5,01);
+  delay(x);   
+  digitalWrite(5,00);  
+  digitalWrite(6,01);
+  delay(x);  
+  digitalWrite(6,00);                  
+  digitalWrite(7,01);
+  delay(x);  
+  digitalWrite(7,00);    
+  digitalWrite(8,01);
+  delay(x);  
+  digitalWrite(8,00);                  
+  digitalWrite(9,01);
+  delay(x); 
+  digitalWrite(9,00);   
+  digitalWrite(10,01);
+  delay(x); 
+  digitalWrite(10,00);                   
+  digitalWrite(11,01);
+  delay(x);  
+  digitalWrite(11,00);    
+  digitalWrite(12,01);
+  delay(x);  
+  digitalWrite(12,00);                  
+  digitalWrite(13,01); 
+  delay(x); 
+  digitalWrite(13,00);  
+  digitalWrite(14,01);
+  delay(x); 
+  digitalWrite(14,00);                  
+  digitalWrite(15,01);
+  delay(x);  
+  digitalWrite(15,00);     
+  digitalWrite(16,01);
+  delay(x);  
+  digitalWrite(16,00);               
+  digitalWrite(17,01);
+  delay(x); 
+  digitalWrite(17,00);     
+  digitalWrite(18,01);
+  delay(x);  
+  digitalWrite(18,00);     
+  digitalWrite(19,01);
+  delay(x);    
+}

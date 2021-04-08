@@ -1,0 +1,65 @@
+#include<IRremote.h>
+int r=19,C;
+IRrecv s(r);
+decode_results c;
+//            a,b,c,d,e,f,g             
+int a[1][7]={{0,1,1,0,0,1,0}};
+int b[1][7]={{1,1,0,1,1,0,1}};                 
+int k[1][7]={{1,1,1,1,0,0,1}};              
+int d[1][7]={{0,1,1,0,0,1,1}};                 
+int e[1][7]={{1,0,1,1,0,1,1}};                
+int f[1][7]={{1,0,1,1,1,1,1}};                 
+int g[1][7]={{1,1,1,0,0,0,0}};
+int h[1][7]={{1,1,1,1,1,1,1}};
+int i[1][7]={{1,1,1,1,0,1,1}};
+int j[1][7]={{1,1,1,1,1,1,0}}; 
+int p;                 
+void setup() { 
+s.enableIRIn();   
+for(p=2;p<=9;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop() {
+if (s.decode(&c)){  
+if (c.value==0x40BD00FF || c.value==0x40BD00FF && c.value==0xFFFFFFFF){
+   for(C=0;C<9;C++)
+{ digitalWrite(C+2,a[0][C]);}             
+}
+if (c.value==0x40BD807F || c.value==0x40BD807F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,b[0][C]);}
+}
+if(c.value==0x40BD40BF || c.value==0x40BD40BF && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,k[0][C]);}
+}
+if( c.value==0x40BDC03F || c.value==0x40BDC03F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,d[0][C]);}
+}
+if(c.value==0x40BD20DF || c.value==0x40BD20DF && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,e[0][C]);}
+}
+if(c.value==0x40BDA05F || c.value==0x40BDA05F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,f[0][C]);}
+}
+if(c.value==0x40BD609F || c.value==0x40BD609F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,g[0][C]);}
+}
+if(c.value==0x40BDE01F || c.value==0x40BDE01F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,h[0][C]);}
+}
+if(c.value==0x40BD10EF || c.value==0x40BD10EF && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,i[0][C]);}
+}
+if(c.value==0x40BD906F || c.value==0x40BD906F && c.value==0xFFFFFFFF){
+  for(C=0;C<9;C++)
+{ digitalWrite(C+2,j[0][C]);}
+}
+s. resume();
+} }

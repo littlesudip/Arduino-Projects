@@ -1,0 +1,28 @@
+//BLINK (-3)
+int p, a, a1, a2, f = 30, l = 49, x = 100;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  for ( a = l, a1 = l - 1, a2 = l - 2; a >= f, a1 >= f-1, a2 >= f-2; a -= 3, a1 -= 3 , a2 -= 3) {
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 00);
+  }
+  delay(x);
+  for ( a = l, a1 = l - 1, a2 = l - 2; a >= f, a1 >= f-1, a2 >= f-2; a -= 3, a1 -= 3 , a2 -= 3) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+    digitalWrite(a2, 00);
+  }
+  delay(x);
+  for ( a = l, a1 = l - 1, a2 = l - 2; a >= f, a1 >= f-1, a2 >= f-2; a -= 3, a1 -= 3 , a2 -= 3) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 01);
+  }
+  delay(x);
+}

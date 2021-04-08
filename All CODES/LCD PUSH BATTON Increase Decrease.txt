@@ -1,0 +1,36 @@
+//LCD PUSH BATTON Increase Decrease
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int  b=8,b1=9,b2=10;           
+int n=0,s=0,s1=0,s2=0,r=0,r1=0,r2=0;      
+void setup() {
+pinMode(b, INPUT);
+pinMode(b1, INPUT);
+pinMode(b2, INPUT);
+lcd.begin(20, 4);
+}
+void loop() { 
+s= digitalRead(b);
+s1= digitalRead(b1);
+s2= digitalRead(b2);
+lcd.setCursor(6,1);
+lcd.print("Number:");
+lcd.print(n);
+if (s!=r) {
+if (s==1) {
+n+=1;
+lcd.clear();} 
+}
+else if (s1!=r1) {
+if (s1==1) {
+n-=1;
+lcd.clear();} 
+}
+else if (s2!=r2) {
+if (s2==1) {
+n=0;
+lcd.clear();} 
+}
+r=s;r1=s1,r2=s2;
+}

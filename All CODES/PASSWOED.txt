@@ -1,0 +1,132 @@
+//PASSWOED
+#include <Wire.h>
+#include <LiquidCrystal.h>
+#include <Keypad.h>
+#define I2CADDR 0x38
+#define openpin 13
+char inputArray[4];
+char Thomas[4] = {'1', '9', '6', '6'};
+char Benny[4] = {'1', '5', '5', '6'};
+char Arta[4] = {'1', '9', '9', '7'};
+char Andrew[4] = {'1', '9', '9', '1'};
+int i = 0;
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int checkpass()
+{
+  delay(1000);
+  if ((inputArray[0] == Thomas[0] &&
+       inputArray[1] == Thomas[1] &&
+       inputArray[2] == Thomas[2] &&
+       inputArray[3] == Thomas[3]) ||
+      (inputArray[0] == Benny[0] &&
+       inputArray[1] == Benny[1] &&
+       inputArray[2] == Benny[2] &&
+       inputArray[3] == Benny[3]) ||
+      (inputArray[0] == Arta[0] &&
+       inputArray[1] == Arta[1] &&
+       inputArray[2] == Arta[2] &&
+       inputArray[3] == Arta[3]) ||
+      (inputArray[0] == Andrew[0] &&
+       inputArray[1] == Andrew[1] &&
+       inputArray[2] == Andrew[2] &&
+       inputArray[3] == Andrew[3]))
+  {
+    access();
+  } else
+  {
+    noaccess();
+  }
+}
+
+
+
+//......keypad
+const byte r = 4; //four rows
+const byte c = 4; //three columns
+char h[r][c] = {
+  {'1', '2', '3', 'A'},
+  {'4', '5', '6', 'B'},
+  {'7', '8', '9', 'C'},
+  {'*', '0', '#', 'D'}
+};
+byte rp[r]={29,28,27,26}; 
+byte cp[c]={25,24,23,22}; 
+Keypad p= Keypad(makeKeymap(h),rp,cp,r,c);
+
+
+
+
+void setup() {
+  Wire.begin( );
+  Serial.begin(9600);
+  lcd.begin(16, 2);
+  DisplayCodeEntryScreen();
+
+
+
+}
+
+void loop()
+{
+  char k=p.getKey();
+
+  if (k)
+  {
+    inputArray[i] = k;
+    i++;
+    Serial.print(k);
+    lcd.setCursor(i + 5, 1);
+    lcd.print("*");
+
+    if (i == 4)
+    {
+      checkpass();
+    }
+
+    if (i >= 5)
+    {
+      i = 0;
+      DisplayCodeEntryScreen();
+    }
+
+
+  }
+}
+
+void DisplayCodeEntryScreen ()
+{
+  digitalWrite(openpin, LOW);
+  lcd.clear();
+  Serial.begin(9600);
+  lcd.setCursor(0, 0);
+  lcd.print("Enter Grow Code");
+  lcd.setCursor(0, 1);
+  lcd.print("Lights:");
+
+
+
+}
+
+void access()
+{
+  lcd.clear();
+  lcd.setCursor(1, 0);
+  lcd.print("Access Granted");
+  digitalWrite(openpin, HIGH);
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(1, 0);
+  lcd.print("Press Any Key");
+  lcd.setCursor(1, 1);
+  lcd.print("To Lock");
+}
+
+void noaccess()
+{
+  lcd.clear();
+  lcd.setCursor(1, 0);
+  lcd.print("Not Athorized");
+  lcd.setCursor(3, 1);
+  lcd.print("Try Again");
+}

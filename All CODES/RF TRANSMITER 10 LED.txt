@@ -1,0 +1,102 @@
+//RF TRANSMITER 10 LED PIN 12
+#include <RH_ASK.h>
+#include <SPI.h>
+int n = 0, b = 13, s = 0, r = 0,x=150;
+RH_ASK R;
+void setup() {
+  R.init();
+  pinMode(b, INPUT);
+}
+void loop() {
+  Start: 
+  Batton();
+  if (n == 1) {
+    Batton();
+  if (n != 1){goto Start;}  
+    char *D = "1";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 2) {
+    Batton();
+    if (n != 2){goto Start;}
+    char *D = "2";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 3) {
+    Batton();
+    if (n != 3){goto Start;}
+    char *D = "3";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+    else if (n == 4) {
+    Batton(); 
+    if (n != 4){goto Start;} 
+    char *D = "4";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 5) {
+    Batton();
+    if (n != 5){goto Start;}
+    char *D = "5";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+    else if (n == 6) {
+      Batton();  
+      if (n != 6){goto Start;}
+    char *D = "6";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 7) {
+      Batton();
+      if (n != 7){goto Start;}
+    char *D = "7";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+    else if (n == 8) {
+      Batton();  
+      if (n != 8){goto Start;}
+    char *D = "8";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 9) {
+      Batton();
+      if (n != 9){goto Start;}
+    char *D = "9";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else if (n == 10) {
+      Batton();
+      if (n != 10){goto Start;}
+    char *D = "10";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+  else {
+      Batton();
+      if (n != 0){goto Start;}
+    char *D = "0";
+    R.send((uint8_t *)D, strlen(D));
+    delay(x);
+  }
+}
+void Batton() {
+  s = digitalRead(b);
+  if (s != r) {
+    if (s == 1) {
+      n += 1;
+      if (n > 10) {
+        n = 0;
+      }
+    }
+    r = s;
+  }
+}

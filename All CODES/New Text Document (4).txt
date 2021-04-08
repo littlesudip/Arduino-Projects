@@ -1,0 +1,40 @@
+#include <SoftwareSerial.h>
+SoftwareSerial gsm(2,3);
+String msg;
+const int LED = 13;
+void setup() {
+  gsm.begin(9600);
+  Serial.begin(9600);
+  Serial.println("PUMP CONTROL");
+  Serial.println("t : to receive text");
+  delay(1000);
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, HIGH);
+}
+void loop() {
+  if (Serial.available()>0)
+  switch(Serial.read()){
+    case 't':
+    showSMS();
+    break;
+  }
+  if (gsm.available()>0)
+  Serial.write(gsm.read());
+  if ( msg == "ON"){
+    digitalWrite(LED, HIGH);
+    delay(1000);
+  }
+  if (msg == "OFF"){
+    digitalWrite(LED, LOW);
+    delay(1000);
+  }
+}
+void showSMS(){
+ gsm.print("AT+CMGF=1\r");
+ gsm.print("AT+CNMI=2,2,0,0,0\r");
+ delay(1000);
+ if (gsm.available()>0){
+  msg=gsm.read();
+  Serial.print(msg);
+ }
+}

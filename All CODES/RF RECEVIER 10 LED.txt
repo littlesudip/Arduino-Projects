@@ -1,0 +1,168 @@
+//RF TEXT RECEVIER PIN 11
+#include <RH_ASK.h>
+#include <SPI.h>
+int a, f = 22, l = 32;
+String k;
+enum LED {p = 22, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10};
+RH_ASK R;
+void setup() {
+  R.init();
+  Serial.begin(9600);
+  for (a = f; a <= l; a++)
+  {
+    pinMode(a, OUTPUT);
+  }
+}
+void loop() {
+  uint8_t D[2];
+  uint8_t Ds = sizeof(D);
+  if (R.recv(D, &Ds)) {
+  k=((char*)D);  
+  LED();
+}
+}
+void LED() {
+  if (k == "0") {
+    digitalWrite(p, 01);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "1") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 01);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "2") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 01);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "3") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 01);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "4") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 01);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "5") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 01);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "6") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 01);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "7") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 01);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "8") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 01);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "9") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 01);
+    digitalWrite(p10, 00);
+  }
+  else if (k == "10") {
+    digitalWrite(p, 00);
+    digitalWrite(p1, 00);
+    digitalWrite(p2, 00);
+    digitalWrite(p3, 00);
+    digitalWrite(p4, 00);
+    digitalWrite(p5, 00);
+    digitalWrite(p6, 00);
+    digitalWrite(p7, 00);
+    digitalWrite(p8, 00);
+    digitalWrite(p9, 00);
+    digitalWrite(p10, 01);
+  }
+}

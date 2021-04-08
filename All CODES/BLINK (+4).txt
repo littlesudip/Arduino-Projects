@@ -1,0 +1,37 @@
+// BLINK (+4)
+int p, a, a1, a2, a3 , f = 30, l = 49, x = 100;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  for (a = f, a1 = f + 1, a2 = f + 2, a3 = f + 3; a <= l, a1 <= l + 1, a2 <= l + 2, a3 <= l + 3; a += 4, a1 += 4 , a2 += 4, a3 += 4) {
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 00);
+    digitalWrite(a3, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1, a2 = f + 2, a3 = f + 3; a <= l, a1 <= l + 1, a2 <= l + 2, a3 <= l + 3; a += 4, a1 += 4 , a2 += 4, a3 += 4) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+    digitalWrite(a2, 00);
+    digitalWrite(a3, 01);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1, a2 = f + 2, a3 = f + 3; a <= l, a1 <= l + 1, a2 <= l + 2, a3 <= l + 3; a += 4, a1 += 4 , a2 += 4, a3 += 4) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 01);
+    digitalWrite(a3, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1, a2 = f + 2, a3 = f + 3; a <= l, a1 <= l + 1, a2 <= l + 2, a3 <= l + 3; a += 4, a1 += 4 , a2 += 4, a3 += 4) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 01);
+    digitalWrite(a3, 00);
+  }
+}

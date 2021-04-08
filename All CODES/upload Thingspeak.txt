@@ -1,0 +1,80 @@
+#include <ESP8266WiFi.h>
+const char* ssid     = "Emon";
+const char* password = "password jani na";
+const char* host = "api.thingspeak.com";
+char thingSpeakAddress[] = "api.thingspeak.com";
+String writeAPIKey = "LHTZWHCOZ8LKFUDH";
+const int updateThingSpeakInterval = 30 * 1000;    
+long lastConnectionTime = 0; 
+boolean lastConnected = false;
+int failedCounter = 0;
+float myvalue = 1234;
+WiFiClient client;
+void setup(){
+  Serial.begin(9600);
+  startEthernet();
+}
+void loop(){
+  String analogValue0 = String(myvalue++, DEC);
+  if (client.available()){
+    char c = client.read();
+    Serial.print(c);
+  }
+  if (!client.connected() && lastConnected){
+    Serial.println("...disconnected");
+    Serial.println();
+    client.stop();
+  }
+  if(!client.connected() && (millis() - lastConnectionTime > updateThingSpeakInterval)){
+    updateThingSpeak("field1="+analogValue0);
+  }
+  if (failedCounter > 3 ) {startEthernet();}
+  lastConnected = client.connected();
+}
+void updateThingSpeak(String tsData){
+  if (client.connect(thingSpeakAddress, 80)){         
+    client.print("POST /update HTTP/1.1\n");
+    client.print("Host: api.thingspeak.com\n");
+    client.print("Connection: close\n");
+    client.print("X-THINGSPEAKAPIKEY: "+writeAPIKey+"\n");
+    client.print("Content-Type: application/x-www-form-urlencoded\n");
+    client.print("Content-Length: ");
+    client.print(tsData.length());
+    client.print("\n\n");
+    client.print(tsData);
+    lastConnectionTime = millis();
+    if (client.connected()){
+      Serial.println("Connecting to ThingSpeak...");
+      Serial.println();
+      failedCounter = 0;
+    }
+    else{
+      failedCounter++;
+      Serial.println("Connection to ThingSpeak failed ("+String(failedCounter, DEC)+")");   
+      Serial.println();
+    }
+  }
+  else{
+    failedCounter++;
+    Serial.println("Connection to ThingSpeak Failed ("+String(failedCounter, DEC)+")");   
+    Serial.println();
+    lastConnectionTime = millis(); 
+  }
+}
+void startEthernet(){
+   failedCounter = 0;
+  client.stop();
+  Serial.println("Connecting Arduino to network...");
+  Serial.println();  
+  delay(1000);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");  
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+  delay(1000);
+}

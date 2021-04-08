@@ -1,0 +1,19 @@
+// ask_transmitter
+#include <RH_ASK.h>
+#include <SPI.h> 
+RH_ASK Radio(2000,"",2);
+void setup() {
+pinMode(13,OUTPUT);
+Serial.begin(9600);
+if (!Radio.init())
+Serial.println ("int failed");
+}
+
+void loop() {
+const char *msg="It works !";
+Radio.send((uint8_t *)msg, strlen(msg));
+Radio.waitPacketSent();
+digitalWrite(13,01);
+delay (1000);
+digitalWrite(13,00);
+}

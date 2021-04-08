@@ -1,0 +1,17 @@
+//POINTER SERIES BLINK BY (FOR)(+)(18)
+int a, p, *m, x = 100;
+void setup() {
+  for (p =2; p <= 19; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop()
+{
+  for (a =2; a <= 19; a++) {
+    m = &a;
+    digitalWrite(*m, 01);
+    delay(x);
+    digitalWrite(*m, 00);
+  }
+}

@@ -1,0 +1,93 @@
+#include<IRremote.h>
+const int i=00;
+IRrecv ir(i);
+decode_results x;
+int p; 
+void setup() {
+ir.enableIRIn();    
+for(p=2;p<=19;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop(){
+if(ir.decode(&x))
+   {switch (x.value) {
+    case 0x40BD00FF:
+      digitalWrite(2,01);
+      break;
+    case 0x40BD807F:
+      digitalWrite(3,01);
+      break;
+    case 0x40BD40BF:
+      digitalWrite(3,01);
+      break;
+    case 0x40BDC03F:
+      digitalWrite(4,01);
+      break;
+    case 0x40BD20DF:
+      digitalWrite(5,01);
+      break;
+    case 0x40BDA05F:
+      digitalWrite(6,01);
+      break;
+    case 0x40BD609F:
+      digitalWrite(7,01);
+      break;
+    case 0x40BDE01F:
+      digitalWrite(8,01);
+      break;
+    case 0x40BD10EF:
+      digitalWrite(9,01);
+      break;
+    case 0x40BD906F:
+      digitalWrite(10,01);
+      break;
+     case 0x40BD50AF:
+      digitalWrite(11,01);
+      break;
+    case 0x40BDB04F:
+      digitalWrite(12,01);
+      break; 
+    case 0x40BD7887:
+      digitalWrite(13,01);
+      break;
+    case 0x40BD38C7:
+      digitalWrite(14,01);
+      break;
+    case 0x40BDD22D:
+      digitalWrite(15,01);
+      break;
+    case 0x40BD52AD:
+      digitalWrite(16,01);
+      break;
+    case 0x40BDE817:
+      digitalWrite(17,01);
+      break;
+    case 0x40BDA857:
+      digitalWrite(18,01);
+      break;
+    case 0x40BD48B7:
+      digitalWrite(19,01);
+      break;
+    default:   
+ digitalWrite(2,00);                
+  digitalWrite(3,00);   
+  digitalWrite(4,00);                
+  digitalWrite(5,00); 
+  digitalWrite(6,00);                
+  digitalWrite(7,00);   
+  digitalWrite(8,00);                
+  digitalWrite(9,00);
+  digitalWrite(10,00);                
+  digitalWrite(11,00);   
+  digitalWrite(12,00);                
+  digitalWrite(13,00);
+  digitalWrite(14,00);                
+  digitalWrite(15,00);   
+  digitalWrite(16,00);                
+  digitalWrite(17,00);   
+  digitalWrite(18,00);                
+  digitalWrite(19,00);
+    break;}
+  ir.resume();  
+  }
+}

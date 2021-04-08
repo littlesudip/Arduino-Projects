@@ -1,0 +1,28 @@
+#include<IRremote.h>
+int r=19,p=2,p1=3;
+IRrecv s(r);
+decode_results c;
+void setup() {
+  s.enableIRIn();
+  pinMode(p, OUTPUT);
+  pinMode(p1, OUTPUT);
+  digitalWrite(p,01);                
+  digitalWrite(p1,01);  
+}
+void loop() {
+if (s.decode(&c)){
+if (c.value==0x40BD28D7 || c.value==0x40BD28D7 && c.value==0xFFFFFFFF){
+  digitalWrite(p,01);                
+  digitalWrite(p1,01);
+  } 
+if (c.value==0x40BD00FF || c.value==0x40BD00FF && c.value==0xFFFFFFFF){ 
+  digitalWrite(p,01);                
+  digitalWrite(p1,00); 
+  }
+if (c.value==0x40BD807F || c.value==0x40BD807F && c.value==0xFFFFFFFF){ 
+  digitalWrite(p,00);                
+  digitalWrite(p1,01); 
+  }
+s. resume();    
+}
+}

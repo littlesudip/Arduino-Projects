@@ -1,0 +1,45 @@
+#include<IRremote.h>
+int r=14,C,m=13,k=7,h=0;
+IRrecv s(r);
+decode_results c;               
+void setup() { 
+s.enableIRIn();   
+pinMode(m,OUTPUT);
+}
+void loop() {
+  Start:
+  vetocity();  
+  digitalWrite(m, 00);
+  delay(k-h);
+  if(h==0){goto Start;}
+  digitalWrite(m, 01);
+  delay(k-(k-h));
+}
+void vetocity(){
+if (s.decode(&c)){  
+if (c.value==0x40BD00FF || c.value==0x40BD00FF && c.value==0xFFFFFFFF){
+h=1;            
+}
+if (c.value==0x40BD807F || c.value==0x40BD807F && c.value==0xFFFFFFFF){
+h=2;  
+}
+if(c.value==0x40BD40BF || c.value==0x40BD40BF && c.value==0xFFFFFFFF){
+h=3;  
+}
+if( c.value==0x40BDC03F || c.value==0x40BDC03F && c.value==0xFFFFFFFF){
+h=4;  
+}
+if(c.value==0x40BD20DF || c.value==0x40BD20DF && c.value==0xFFFFFFFF){
+h=5;  
+}
+if(c.value==0x40BDA05F || c.value==0x40BDA05F && c.value==0xFFFFFFFF){
+h=6;  
+}
+if(c.value==0x40BD609F || c.value==0x40BD609F && c.value==0xFFFFFFFF){
+h=7;  
+}
+if(c.value==0x40BD906F || c.value==0x40BD906F && c.value==0xFFFFFFFF){
+h=0;  
+}
+s. resume();
+} }

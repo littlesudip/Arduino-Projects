@@ -1,0 +1,195 @@
+//10 manu 2
+//LCD PUSH BATTON Increase Decrease
+#include <LiquidCrystal.h>
+int d7 = 2, d6 = 3, d5 = 4, d4 = 5, en = 6, rs = 7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int  b = 11, b1 = 12, b2 = 10, b3 = 9;
+int k = 0,y=0, n = 0, e = 0, s = 0, s1 = 0, s2 = 0, s3 = 0, r = 0, r1 = 0 , r2 = 0, r3 = 0;
+String Home[11][10]= {{"(1)Animal", "(2)Bird", "(3)Fruit", "(4)Drinks", "(5)Colour", "(6)Game", "(7)Food", "(8)Flower", "(9)Fish", "(10)Weapon"},
+                 {"(1)Cat", "(2)Dog", "(3)Cow", "(4)Horse", "(5)Mouse", "(6)Rhinoceros", "(7)Lion", "(8)Camel", "(9)Crocodile", "(10)Deer"},
+                 {"(1)Crow", "(2)Cuckoo", "(3)Dove", "(4)Duck", "(5)Eagle", "(6)Hen", "(7)Kingfisher", "(8)Kite", "(9)Owl", "(10)Parrot"},
+                 {"(1)Apple", "(2)Coconuts", "(3)Banana", "(4)Custard Apple", "(5)Date", "(6)Grapes", "(7)Guava", "(8)Jackfruit", "(9)Lemon", "(10)Litchi"},
+                 {"(1)Animal", "(2)Bird", "(3)Fruit", "(4)Drinks", "(5)Colour", "(6)Game", "(7)Food", "(8)Flower", "(9)Fish", "(10)Weapon"},
+                 {"(1)Black", "(2)Blue", "(3)Brown", "(4)Green", "(5)Grey", "(6)Orange", "(7)Pink", "(8)Red", "(9)White", "(10)Weapon"},
+                 {"(1)Basketball", "(2)Volleyball", "(3)Golf", "(4)Soccer", "(5)Hockey", "(6)Tennis", "(7)Archery", "(8)Boxing", "(9)Cycling", "(10)Swimming"},
+                 {"(1)Salad", "(2)Sandwich", "(3)Bread", "(4)Rice", "(5)Pizza", "(6)Cake", "(7)Ice Cream", "(8)Pasta", "(9)Cookies", "(10)Soup"},
+                 {"(1)Lily", "(2)Holly", "(3)Jasmine", "(4)Daisy", "(5)Poppy", "(6)Rose", "(7)Daffodil", "(8)Marigold", "(9)Orchid", "(10)PEONY"},
+                 {"(1)Catfish", "(2)Carp", "(3)Lionfish", "(4)Wolffish", "(5)Bigeye", "(6)Clownfish", "(7)Kingfish", "(8)Lungfish", "(9)Mudfish", "(10)Porgy"},
+                 {"(1)M4 Carbine", "(2)HK416", "(3)AK-47", "(4)HK MG4", "(5)Sniper AS50", "(6)FN SCAR", "(7)FAMAS", "(8)FN F2000", "(9)QBZ-95", "(10)TAR-21."}};
+byte back[8] = {
+  0b00100,
+  0b01000,
+  0b11111,
+  0b01001,
+  0b00101,
+  0b00001,
+  0b00001,
+  0b11111
+};
+byte right_arrow[8] = {
+  0b01000,
+  0b00100,
+  0b00010,
+  0b11111,
+  0b00010,
+  0b00100,
+  0b01000,
+  0b00000
+};
+byte down_arrow[8] = {
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B10101,
+  B01110,
+  B00100
+};
+byte up_arrow[8] = {
+  B00100,
+  B01110,
+  B10101,
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B00100
+};
+void setup() {
+  pinMode(b, INPUT);
+  pinMode(b1, INPUT);
+  pinMode(b2, INPUT);
+  pinMode(b3, INPUT);
+  lcd.createChar(1, back);
+  lcd.createChar(2, right_arrow);
+  lcd.createChar(3, down_arrow);
+  lcd.createChar(4, up_arrow);
+  lcd.begin(20, 4);
+}
+void loop() {
+  Batton();
+  Display();
+  Custom();
+  Manu();
+}
+void Batton() {
+  s = digitalRead(b);
+  if (s != r) {
+    if (s == 1) {
+      n += 1;
+      if (n > 2 && y <= 6) {
+        y += 1;
+      }
+      lcd.clear();
+    }
+    r = s;
+  }
+  s1 = digitalRead(b1);
+  if (s1 != r1) {
+    if (s1 == 1) {
+      n -= 1;
+      if (n < 9 && y >= 1) {
+        y -= 1;
+      }
+      lcd.clear();
+    }
+    r1 = s1;
+  }
+    if (n < 0) {
+    n = 0;
+  }
+  else if (n > 9) {
+    n = 9;
+  }
+  s2 = digitalRead(b2);
+  if (s2 != r2) {
+    if (s2 == 1) {
+      e += 1;
+      lcd.clear();
+    }
+    r2 = s2;
+  }
+  s3 = digitalRead(b3);
+  if (s3 != r3) {
+    if (s3 == 1) {
+      e -= 1;k=0;
+      lcd.clear();
+    }
+    r3 = s3;
+  }
+    if (e < 0) {
+    e = 0;
+  }
+  else if (e > 1) {
+    e = 1;
+  }
+ Control(); 
+}
+void Control(){
+ if (e==1&&n==0&&k==0){k=1;n=0;y=0;} 
+else if (e==1&&n==1){k=2;n=0;y=0;}
+else if (e==1&&n==2){k=3;n=0;y=0;} 
+else if (e==1&&n==3){k=4;n=0;y=0;}
+else if (e==1&&n==4){k=5;n=0;y=0;} 
+else if (e==1&&n==5){k=6;n=0;y=0;}
+else if (e==1&&n==6){k=7;n=0;y=0;} 
+else if (e==1&&n==7){k=8;n=0;y=0;}
+else if (e==1&&n==8){k=9;n=0;y=0;} 
+else if (e==1&&n==9){k=10;n=0;y=0;}   
+}
+void Manu() {
+  if (e == 0) {
+    lcd.setCursor(1, 1);
+    lcd.print(Home[k][y]);
+    lcd.setCursor(1, 2);
+    lcd.print(Home[k][y+1]);
+    lcd.setCursor(1, 3);
+    lcd.print(Home[k][y+2]);
+  }
+}
+void Custom() {
+  lcd.setCursor(0, n + 1);
+  lcd.write(2);
+  if (e != 0) {
+    lcd.setCursor(18, 0);
+    lcd.write(1);
+  }
+}
+void Display(){
+  lcd.setCursor(0, 0);
+  lcd.print("Manu-");
+  lcd.setCursor(5, 0);
+  switch(k){
+    case 1:
+    lcd.print("Animal");
+      break;
+    case 2:
+    lcd.print("Bird");
+      break;
+    case 3:
+    lcd.print("Fruit");
+      break;
+    case 4:
+    lcd.print("Drinks");
+      break;
+    case 5:
+    lcd.print("Colour");
+      break;
+    case 6:
+    lcd.print("Game");
+      break;
+    case 7:
+    lcd.print("Food");
+      break;
+    case 8:
+    lcd.print("Flower");
+      break;
+    case 9:
+    lcd.print("Fish");
+      break;
+    case 10:
+    lcd.print("Weapon");
+      break;
+  }
+}

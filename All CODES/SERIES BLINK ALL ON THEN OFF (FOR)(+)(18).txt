@@ -1,0 +1,18 @@
+//SERIES BLINK ALL ON THEN OFF
+int p, f=30, l=49, x = 100;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop()
+{
+  for (int a = f; a <= l; a++) {
+    digitalWrite(a, 01);
+  }
+  for (int a = f; a <= l; a++) {
+    digitalWrite(a, 00);
+    delay(x);
+  }
+}

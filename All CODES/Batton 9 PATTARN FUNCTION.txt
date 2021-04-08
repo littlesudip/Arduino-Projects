@@ -1,0 +1,183 @@
+//Batton 9 PATTARN FUNCTION
+const int v = 49;
+int a, a1, a2 , p, s = 0, z = 0, c = 0, f = 22, l = 41, x = 100, H = 3;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+  pinMode(v, INPUT);
+}
+void loop() {
+  if (c == 0) {
+    A();
+  }
+  else if (c == 1) {
+    B();
+  }
+  else if (c == 2) {
+    C();
+  }
+  else if (c == 3) {
+    D();
+  }
+  else if (c == 4) {
+    E();
+  }
+  else if (c == 5) {
+    M();
+  }
+  else if (c == 6) {
+    G();
+  }
+  else if (c == 7) {
+    I();
+  }
+  else if (c == 8) {
+    j();  
+  }
+}
+void A() {
+  for (a = f; a <= l; a++) {
+    Batton();
+    digitalWrite(a, 01);
+    delay(x);
+    digitalWrite(a, 00);
+  }
+}
+void B()
+{
+  for (int a = l; a >= f; a--) {
+    Batton();
+    digitalWrite(a, 01);
+    delay(x);
+    digitalWrite(a, 00);
+  }
+}
+void C() {
+  for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    Batton();
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    Batton();
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+  }
+  delay(x);
+}
+void D() {
+  for (int a = f, b = l; a <= l, b >= f; a++, b--) {
+    Batton();
+    digitalWrite(a, 01);
+    digitalWrite(b, 01);
+    delay(x);
+    digitalWrite(a, 00);
+    digitalWrite(b, 00);
+  }
+}
+void E() {
+  for (a = f; a <= l; a++) {
+    Batton();
+    digitalWrite(a, 00);
+  }
+  delay(x);
+  for (a = f; a <= l; a++) {
+    Batton();
+    digitalWrite(a, 01);
+  }
+  delay(x);
+}
+void M() {
+  for (a = f, a1 = f + 1, a2 = f + 2; a <= l, a1 <= l + 1, a2 <= l + 2; a += 3, a1 += 3 , a2 += 3) {
+    Batton();
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1, a2 = f + 2; a <= l, a1 <= l + 1, a2 <= l + 2; a += 3, a1 += 3 , a2 += 3) {
+    Batton();
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+    digitalWrite(a2, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1, a2 = f + 2; a <= l, a1 <= l + 1, a2 <= l + 2; a += 3, a1 += 3 , a2 += 3) {
+    Batton();
+    digitalWrite(a, 00);
+    digitalWrite(a1, 00);
+    digitalWrite(a2, 01);
+  }
+  delay(x);
+}
+void G()
+{ if ((l - f) % 2 == 1) {
+    for (a = f, a1 = f + ((l - f) + 1) / 2; a <= f + ((l - f) + 1) / 2, a1 <= l; a++, a1++) {
+      Batton();
+      digitalWrite(a, 01);
+      digitalWrite(a1, 00);
+    } delay(x);
+    for (a = f, a1 = f + ((l - f) + 1) / 2; a <= f + ((l - f) + 1) / 2, a1 <= l; a++, a1++) {
+      Batton();
+      digitalWrite(a, 00);
+      digitalWrite(a1, 01);
+    }
+    delay(x);
+  }
+  else {
+    for (a = f, a1 = f + ((l - f) / 2); a <= f + ((l - f) / 2), a1 <= l - 1; a++, a1++) {
+      Batton();
+      digitalWrite(a, 01);
+      digitalWrite(a1, 00);
+    } delay(x);
+    for (a = f, a1 = f + ((l - f) / 2); a <= f + ((l - f) / 2), a1 <= l - 1; a++, a1++) {
+      Batton();
+      digitalWrite(a, 00);
+      digitalWrite(a1, 01);
+    }
+    delay(x);
+  }
+}
+void I() {
+  {
+    for (int a = f; a <= l; a++) {
+      Batton();
+      digitalWrite(a, 01);
+    }
+    for (int a = f; a <= l; a++) {
+      Batton();
+      digitalWrite(a, 00);
+      delay(x);
+    }
+  }
+}
+void j() {
+  for (a = f, a1 = l; a <= l, a1 >= f; a++, a1--) {
+    if (a % 2 == 0) {
+      Batton();
+      digitalWrite(a, 01);
+      delay (50);
+      digitalWrite(a, 00);
+    }
+    if (a % 2 == 0) {
+      Batton();
+      digitalWrite(a1, 01);
+      delay (50);
+      digitalWrite(a1, 00);
+    }
+  }
+}
+void Batton() {
+  s = digitalRead(v);
+  if (s != z) {
+    if (s == 1) {
+      c++; if (c > 8) {
+        c = 0;
+      }
+    }
+  }
+  z = s;
+}

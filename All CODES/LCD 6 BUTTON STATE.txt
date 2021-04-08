@@ -1,0 +1,42 @@
+//LCD BATTON NAME PRINT
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int  b1=8,b2=9,b3=10,b4=11,b5=12,b6=13;
+int s1=0,s2=0,s3=0,s4=0,s5=0,s6=0;
+unsigned long PT=0; 
+const long DF=50;
+void setup() {
+  pinMode(b1,INPUT);
+  pinMode(b2,INPUT);
+  pinMode(b3,INPUT);
+  pinMode(b4,INPUT);
+  pinMode(b5,INPUT);
+  pinMode(b6,INPUT); 
+  lcd.begin(20, 4);
+}
+void loop() {
+  s1= digitalRead(b1);
+  s2= digitalRead(b2);
+  s3= digitalRead(b3);
+  s4= digitalRead(b4);
+  s5= digitalRead(b5);
+  s6= digitalRead(b6);
+  lcd.setCursor(00,0);lcd.print("6 PUSH BUTTON STATE:");  
+  lcd.setCursor(00,1);lcd.print("L1:");
+  if(s1==1){lcd.print("ON");}else{lcd.print("OFF");}
+  lcd.setCursor(10,1);lcd.print("L2:");
+  if(s2==1){lcd.print("ON");}else{lcd.print("OFF");}
+  lcd.setCursor(00,2);lcd.print("L3:");
+  if(s3==1){lcd.print("ON");}else{lcd.print("OFF");}
+  lcd.setCursor(10,2);lcd.print("L4:");
+  if(s4==1){lcd.print("ON");}else{lcd.print("OFF");}
+  lcd.setCursor(00,3);lcd.print("L5:");
+  if(s5==1){lcd.print("ON");}else{lcd.print("OFF");}
+  lcd.setCursor(10,3);lcd.print("L6:");
+  if(s6==1){lcd.print("ON");}else{lcd.print("OFF");}
+while (millis()-PT>=DF) {
+PT= millis();
+lcd.clear();
+ }     
+}

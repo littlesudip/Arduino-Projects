@@ -1,0 +1,19 @@
+//ALL LiquidCrystal
+#include <LiquidCrystal.h>  
+lcd.begin(20,4);
+lcd.setCursor(00,0);
+lcd.print("EMON");
+lcd.noBlink();
+lcd.blink();
+lcd.noDisplay();
+lcd.display();
+lcd.noCursor();
+lcd.cursor();
+lcd.clear();
+lcd.write(Serial.read());
+lcd.autoscroll();
+lcd.noAutoscroll();
+lcd.scrollDisplayLeft();
+lcd.scrollDisplayRight();
+lcd.rightToLeft();
+lcd.leftToRight();

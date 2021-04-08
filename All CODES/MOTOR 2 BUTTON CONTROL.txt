@@ -1,0 +1,36 @@
+//Bluetooth MOTOR CONTROL
+int m=13,v=2,v1=3,c=7,h=0,s=0,s1=0,z=0,z1=0;
+void setup() {
+    Serial.begin(9600);
+    pinMode(m, OUTPUT);
+    pinMode(v,INPUT);
+    pinMode(v1,INPUT);
+}
+void loop() { 
+  vetocity(); 
+  Serial.println(h);    
+  digitalWrite(m, 00);
+  delay(c-h);
+  digitalWrite(m, 01);
+  delay(c-(c-h));
+}
+void vetocity(){
+  s = digitalRead(v);
+  if (s!=z) {
+    if (s == 1) {
+      h++; if (h>7) {
+        h=7;
+      }
+    }
+  }
+  z = s;
+  s1 = digitalRead(v1);
+  if (s1!=z1) {
+    if (s1 == 1) {
+      h--; if (h<0) {
+        h=0;
+      }
+    }
+  }
+  z1=s1;
+}

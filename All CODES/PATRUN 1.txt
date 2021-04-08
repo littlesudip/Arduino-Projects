@@ -1,0 +1,22 @@
+//PATRUN 1
+int p, a, a1, f = 22, l = 41, x =50;
+void setup() {
+  for (p = f; p <= l; p++)
+  {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  for (a = f, a1 = l; a <= l, a1 >= f; a++, a1--) {
+    if (a % 2 == 0) {
+      digitalWrite(a, 01);
+      delay (x);
+      digitalWrite(a, 00);
+    }
+    if (a % 2 == 0) {
+      digitalWrite(a1, 01);
+      delay (x);
+      digitalWrite(a1, 00);
+    }
+  }
+}

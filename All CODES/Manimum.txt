@@ -1,0 +1,18 @@
+//Manimum
+int p, f = 22, l = 41, a = 22, x = 100;
+int m1;
+void setup() {
+  for (p = f; p <= l; p++) {
+    pinMode(p, OUTPUT);
+  }
+}
+void loop() {
+  m1 = min(a++,41);
+  digitalWrite(m1, 01);
+  delay (x);
+  digitalWrite(m1, 00);
+  delay (x);
+  if (a >=41) {
+    a = 22;
+  }
+}

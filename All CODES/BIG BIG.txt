@@ -1,0 +1,53 @@
+byte rp[r]={29,28,27,26}; 
+byte cp[c]={25,24,23,22}; 
+------------------------
+//TEN TIMES OF BUTTON PUSH ON LED
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int  v=8;    
+const int p=30;      
+int c= 0;  
+int s= 0;       
+int z = 0;   
+void setup() {
+pinMode(v, INPUT);
+pinMode(p, OUTPUT);
+lcd.begin(20,4);
+}
+void loop() {
+s= digitalRead(v);
+if (s!=z) {
+if (s==1) {
+c++;
+lcd.clear();
+lcd.print("BATTON PRASS= ");
+lcd.println(c);} 
+else {
+}
+delay(50);
+}
+}
+----------------------
+//TEN TIMES OF BUTTON PUSH ON LED
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int  v=8;        
+int c= 0;  
+int s= 0;       
+int z = 0;   
+void setup() {
+pinMode(v, INPUT);
+lcd.begin(20,4);
+}
+void loop() {
+s= digitalRead(v);
+if (s==1) {
+lcd.print("EMON");}
+if (s==0){
+lcd.print("LEMON");  
+}
+lcd.begin(5,4);
+lcd.clear();
+}

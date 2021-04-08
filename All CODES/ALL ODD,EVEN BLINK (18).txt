@@ -1,0 +1,18 @@
+//ALL ODD,EVEN BLINK (18)
+int p,a,a1,f=2,l=19,x=200;
+void setup() {  
+for(p=f;p<=l;p++)
+{pinMode(p, OUTPUT);}
+}
+void loop() {
+ for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    digitalWrite(a, 01);
+    digitalWrite(a1, 00);
+  }
+  delay(x);
+  for (a = f, a1 = f + 1; a <= l, a1 <= l; a += 2, a1 += 2) {
+    digitalWrite(a, 00);
+    digitalWrite(a1, 01);
+  }
+  delay(x);
+}

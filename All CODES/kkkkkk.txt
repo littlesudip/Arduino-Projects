@@ -1,0 +1,32 @@
+#include<IRremote.h>
+const int r=02;
+ int x=8;
+ int y=7;
+int togglestate=0;
+IRrecv irrecv(r);
+decode_results results;
+void setup() {
+irrecv.enableIRIn();
+pinMode(x,OUTPUT);
+pinMode(y,OUTPUT);
+}
+void loop() {
+if (irrecv.decode(&results)){
+switch(results.value){
+  case 0x40BD00FF:
+  digitalWrite(x,01);
+  digitalWrite(x,00);
+  break;
+  case 0x40BD807F:
+  if(togglestate==0){
+  digitalWrite(y,01);  
+  togglestate=1;
+  }
+  else{
+  digitalWrite(y,00);  
+  togglestate=0;
+  }
+  break;
+}
+irrecv. resume();
+}}

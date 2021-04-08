@@ -1,0 +1,130 @@
+//LCD 2 NAME
+#include <LiquidCrystal.h>
+int d7=2,d6=3,d5=4,d4=5,en=6,rs=7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+byte LU[8] = 
+{
+  B11111,
+  B11111,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000
+};
+byte UP[8] =
+{
+  B11111,
+  B11111,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+byte RU[8] =
+{
+  B11111,
+  B11111,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011
+};
+byte LD[8] =
+{
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11111,
+  B11111
+};
+byte DW[8] =
+{
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111,
+  B11111
+};
+byte RD[8] =
+{
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B11111,
+  B11111
+};
+byte LL[8] =
+{
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000,
+  B11000
+};
+byte RR[8] =
+{
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011,
+  B00011
+};
+void setup()
+{
+  lcd.createChar(1,LU);
+  lcd.createChar(2,UP);
+  lcd.createChar(3,RU);
+  lcd.createChar(4,LD);
+  lcd.createChar(5,DW);
+  lcd.createChar(6,RD);
+  lcd.createChar(7,LL);
+  lcd.createChar(8,RR);      
+  lcd.begin(20,4);
+}
+void loop(){ 
+  lcd.setCursor(0,0);   
+  lcd.write(1);
+  for(int i=1;i<=19;i++){    
+  lcd.write(2);
+  lcd.setCursor(i,0);}
+  lcd.write(3);
+  lcd.setCursor(0,3); 
+  lcd.write(4);
+  for(int i=1;i<=19;i++){    
+  lcd.write(5);
+  lcd.setCursor(i,3);}
+  lcd.write(6);
+  lcd.setCursor(0,1); 
+  lcd.write(7);
+  lcd.setCursor(0,2); 
+  lcd.write(7);
+  lcd.setCursor(19,1);   
+  lcd.write(8);
+  lcd.setCursor(19,2);   
+  lcd.write(8); 
+  lcd.setCursor(1,1);
+  lcd.print("RAKIBUL AHMED EMON");
+  lcd.setCursor(1,2);
+  lcd.print("EMRAN AHMED LEMON");    
+}

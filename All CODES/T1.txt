@@ -1,0 +1,60 @@
+// T1
+#include <RH_ASK.h>
+#include <SPI.h>
+RH_ASK rf_driver;
+const int b0 = 2, b1 = 3, b2 = 4, b3 = 5, b4 = 6, b5 = 7, b6 = 8;
+int s0 = 0, s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0, s6 = 0, s7 = 0;
+void setup() {
+  rf_driver.init();
+  pinMode(b0, INPUT);
+  pinMode(b1, INPUT);
+  pinMode(b2, INPUT);
+  pinMode(b3, INPUT);
+  pinMode(b4, INPUT);
+  pinMode(b5, INPUT);
+  pinMode(b6, INPUT);
+}
+void loop() {
+  s0 = digitalRead(b0);
+  s1 = digitalRead(b1);
+  s2 = digitalRead(b2);
+  s3 = digitalRead(b3);
+  s4 = digitalRead(b4);
+  s5 = digitalRead(b5);
+  s6 = digitalRead(b6);
+  const char *msg0 = "0", *msg1 = "1", *msg2 = "2", *msg3 = "3", *msg4 = "4", *msg5 = "5", *msg6 = "6";
+  if ( s0 == 01) {
+    rf_driver.send((uint8_t *)msg0, strlen(msg0));
+    rf_driver.waitPacketSent();
+    delay(30);
+  }
+  else if (s1 == 01) {
+    rf_driver.send((uint8_t *)msg1, strlen(msg1));
+    rf_driver.waitPacketSent();
+  }
+  else if (s2 == 01) {
+    rf_driver.send((uint8_t *)msg2, strlen(msg2));
+    rf_driver.waitPacketSent();
+    delay(30);
+  }
+  else if (s3 == 01) {
+    rf_driver.send((uint8_t *)msg3, strlen(msg3));
+    rf_driver.waitPacketSent();
+  }
+  else if (s4 == 01) {
+    rf_driver.send((uint8_t *)msg4, strlen(msg4));
+    rf_driver.waitPacketSent();
+    delay(30);
+  }
+  else if (s5 == 01) {
+    rf_driver.send((uint8_t *)msg5, strlen(msg5));
+    rf_driver.waitPacketSent();
+  }
+  else if (s6 == 01) {
+    rf_driver.send((uint8_t *)msg6, strlen(msg6));
+    rf_driver.waitPacketSent();
+    delay(30);
+  }
+  else {
+  }
+}

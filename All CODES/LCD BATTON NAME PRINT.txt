@@ -1,0 +1,25 @@
+//LCD BATTON NAME PRINT
+#include <LiquidCrystal.h>
+int d7 = 2, d6 = 3, d5 = 4, d4 = 5, en = 6, rs = 7;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int  v = 8;
+int s = 0;
+void setup() {
+  pinMode(v, INPUT);
+  lcd.begin(20, 4);
+
+}
+void loop() {
+  s = digitalRead(v);
+  lcd.setCursor(8, 1);
+  switch (s) {
+    case 0:
+      lcd.print("EMON");
+      delay (100);
+      break;
+    case 1:
+      lcd.print("LEMON");
+      delay (100);
+  }
+  lcd.clear(); 
+}

@@ -1,0 +1,90 @@
+//Thingspeak  
+#include <ESP8266WiFi.h>
+String myAPIkey ="Y1BNC3XG5DZNBEGA";   
+WiFiServer server(80);
+String page = "";
+double data;
+void setup(){
+  pinMode(A0, INPUT);
+  delay(1000);
+  Serial.begin(9600);
+  WiFi.begin(NAME, password); 
+  while (WiFi.status() != WL_CONNECTED) {
+  delay(500);
+  }
+  Serial.println(NAME);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.on("/", [](){
+    page = "<h1>Potentiometer Value</h1><h3>Data:</h3> <h4>"+String(data)+"</h4>";
+    server.send(200, "text/html", page);
+  });
+  server.begin();
+}
+void loop(){
+  waitTime = millis()-startTime;   
+  if (waitTime > (writingTimer*1000)) 
+  {
+    readSensors();
+    writeThingSpeak();
+    startTime = millis();   
+  }
+}
+
+
+void readSensors(void){
+  temp_f = dht.readTemperature();
+  humidity = dht.readHumidity();
+}
+void writeThingSpeak(void)
+{
+  startThingSpeakCmd();
+  String getStr = "GET /update?api_key=";
+  getStr += myAPIkey;
+  getStr +="&field1=";
+  getStr += String(temp_f);
+  getStr += "\r\n\r\n";
+  GetThingspeakcmd(getStr); 
+}
+void startThingSpeakCmd(void)
+{
+  ESP8266.flush();
+  String cmd = "AT+CIPSTART=\"TCP\",\"";
+  cmd += "184.106.153.149";
+  cmd += "\",80";
+  ESP8266.println(cmd);
+  Serial.print("Start Commands: ");
+  Serial.println(cmd);
+  if(ESP8266.find("Error"))
+  {
+    Serial.println("AT+CIPSTART error");
+    return;
+  }
+}
+String GetThingspeakcmd(String getStr){
+  String cmd = "AT+CIPSEND=";
+  cmd += String(getStr.length());
+  ESP8266.println(cmd);
+  Serial.println(cmd);
+  if(ESP8266.find(">")){
+    ESP8266.print(getStr);
+    Serial.println(getStr);
+    delay(500);
+    String messageBody = "";
+    while (ESP8266.available()) {
+      String line = ESP8266.readStringUntil('\n');
+      if (line.length() == 1) 
+      { 
+        messageBody = ESP8266.readStringUntil('\n');
+      }
+    }
+    Serial.print("MessageBody received: ");
+    Serial.println(messageBody);
+    return messageBody;
+  }
+  else
+  {
+    ESP8266.println("AT+CIPCLOSE");     
+    Serial.println("AT+CIPCLOSE"); 
+  } 
+}
